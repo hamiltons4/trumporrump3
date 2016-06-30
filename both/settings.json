@@ -1,0 +1,15 @@
+{
+	"twitterApp": {
+		"consumer": {
+			"key": 	"J0uGu8r2QFu9JEem7nX9zVK6J",
+			"secret": "hkMbfZyAhzp4Olw56OtmmTQxoctHDVykc8IrzaHt9Hl7PM76SG"
+		},
+		"access_token": {
+			"key": "782337289-Y9EcjvhrPctZlAxhahNCQsEx4eeZn71G3tdIwECf",
+			"secret": "mjcMjMUvpFSNeyq3vavv5bs8rJa5w6ehEZqclqIZ1dAXb"
+		}
+	},
+	"public": {
+
+	}
+}
