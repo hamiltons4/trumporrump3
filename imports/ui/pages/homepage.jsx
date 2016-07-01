@@ -8,16 +8,23 @@ import { Navbar } from 'react-bootstrap'
 import { Button } from 'react-bootstrap'
 import { Modal } from 'react-bootstrap'
 
-import { Timeline } from 'react-twitter-widgets';
+import { Timeline } from 'react-twitter-widgets'
+import { FacebookButton, FacebookCount } from "react-social"
+import { TwitterButton, RedditButton, GooglePlusButton, TumblrButton } from 'react-social'
+
 
 //components
 import Vote from '../components/vote.jsx'
 import Uline from '../components/uline.jsx'
 import Ubar from '../components/ubar.jsx'
+import Wline from '../components/wline.jsx'
+import Wbar from '../components/wbar.jsx'
+import Imod from '../components/intromodal.jsx'
 
 //Data
 import { LineData } from '../../../both/collections/tweets.js'
 
+let url = "https://github.com";
 
 
 
@@ -73,11 +80,36 @@ export const Homepage = (props) =>
 				<Ubar bardat={props.bardat}/>
 			</div>
 			<div className="wline">
-				{/*<Wline />*/}
+				<Wline linedat={props.linedat}/>
 			</div>
 			<div className="wbar">
-				{/*<Wbar />*/}
+				<Wbar wbardat={props.wbardat}/>
 			</div>
+	</div>
+	<div className="foot">
+			{/*<Social />*/}
+			<Imod />
+			<div className="buttonholder">
+				<FacebookButton url={url} className="btn btn-facebook">
+					<i className="fa fa-facebook"></i>
+					{" "}
+					<FacebookCount url={url} />
+				</FacebookButton>
+				<TwitterButton url={url} className="btn btn-twitter">
+					<i className="fa fa-twitter"></i>
+				</TwitterButton>
+				<RedditButton url={url} className="btn btn-reddit">
+					<i className="fa fa-reddit-alien"></i>
+				</RedditButton>
+				<GooglePlusButton url={url} className="btn btn-google-plus">
+					<i className="fa fa-google-plus"></i>
+				</GooglePlusButton>
+			</div>
+			{/*
+			<TumblrButton className="btn btn-tumblr">
+				{"Tumblr"}
+			</TumblrButton>
+			*/}
 	</div>
 </div>
 

@@ -7,6 +7,7 @@ import { LineData } from '../../../both/collections/tweets.js'
 var trumps = 0;
 var rumps = 0;
 var bardat = [];
+var wbardat = [];
 /*
 const linedat = LineData.find().fetch();
 for (i=0; i<linedat.length; i++) {
@@ -36,6 +37,8 @@ export default createContainer(() => {
 		linedat: LineData.find().fetch(),
 		bardat: [{qty: trumps, xlabel: "USATrumps"},
 				  {qty: rumps, xlabel: "USARumps"}],
+		wbardat: [{qty: trumps, xlabel: "USATrumps"},
+				   {qty: rumps, xlabel: "USARumps"}],		  
 	};
 		
 
