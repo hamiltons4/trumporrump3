@@ -23,11 +23,13 @@ export default createContainer(() => {
 	//const linedat = LineData.find().fetch();
 	Meteor.subscribe('linedat');// this line alone worked with uline
 	const linedat = LineData.find().fetch();
+	trumps = 0;
+	rumps = 0;
 	for (i=0; i<linedat.length; i++) {
 			trumps = trumps + linedat[i].trumps;
 			rumps = rumps + linedat[i].rumps;
-			console.log("totalT = " + trumps);
-			console.log("totalR =" + rumps);
+			//console.log("totalT = " + trumps);
+			//console.log("totalR =" + rumps);
 		};
  	
 	return {

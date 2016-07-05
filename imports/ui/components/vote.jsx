@@ -1,14 +1,56 @@
 import React, { Component, PropTypes } from 'react';
 
 import { Button } from 'react-bootstrap';
+import { moment } from 'meteor/momentjs:moment'
+
+
 
 export default class Vote extends Component {
+		handleTSubmit(e) {
+			//e.preventDefault();
+
+			var scaleMult = 5; // scale multiplier for display
+			var vote = 1 * scaleMult; 
+			//var parseDate = d3.time.format("%a %b %d %Y").parse;
+			console.log('Trump Vote!');
+			// If trump button is pressed increment trumps for that day
+			// If rump button is pressed increment rumps for that day	
+			/*Meteor.call("increTrumps", vote, moment().isoWeekday(), function(e, r) {
+				if (e) alert(e.reason)
+			}); */
+		    /*
+			Meteor.call("increTrumps", vote, moment().utc().startOf('day').toDate(), function(e, r) {
+				if (e) alert(e.reason)
+			});
+			*/
+			//dateString = new Date;
+			//dateString = parseDate(dateString);
+			Meteor.call("increTrumps", vote, moment().dayOfYear(), function(e, r) {
+				if (e) alert(e.reason)
+			});
+
+		}
+
+		handleRSubmit(e) {
+			//e.preventDefault();
+
+			var scaleMult = 5; // scale multiplier for display
+			var vote = 1* scaleMult;
+			console.log('Rump Vote!');	
+			/*Meteor.call("increRumps", vote, moment().isoWeekday(), function(e, r) {
+				if (e) alert(e.reason)
+			});*/
+			Meteor.call("increRumps", vote, moment().dayOfYear(), function(e,r) {
+				if (e) alert(e.reason)
+			});
+		}
+		
 	render() {
 		return (
 			<div className="vote">
-				<div><button className="btn btn-primary" id="tbutton" type="submit">Trump</button></div>
+				<div><button onClick={this.handleTSubmit} className="btn btn-primary" id="tbutton" type="submit">Trump</button></div>
 				<div><h1><span className="label" id="vlabel">VOTE!</span></h1></div>
-				<div><button className="btn btn-primary" id="rbutton" type="submit">Rump</button></div>
+				<div><button onClick={this.handleRSubmit} className="btn btn-primary" id="rbutton" type="submit">Rump</button></div>
 			</div>
 		)
 	}

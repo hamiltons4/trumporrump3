@@ -1,6 +1,6 @@
 //import React from 'react'
 import React, { Component, PropTypes } from 'react'
-import { createContainer } from 'meteor/react-meteor-data'
+//import { createContainer } from 'meteor/react-meteor-data'
 import { ReactDOM }  from 'react-dom'
 import { Meteor } from 'meteor/meteor'
 
