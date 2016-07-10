@@ -2,13 +2,28 @@ import React, { Component, PropTypes } from 'react';
 
 import { Button } from 'react-bootstrap';
 import { moment } from 'meteor/momentjs:moment'
+import { flowkey } from 'meteor/flowkey:user-location'
 
-
+//var userloc = {};
+var councode = "";
+var councodeR = "";
 
 export default class Vote extends Component {
 		handleTSubmit(e) {
 			//e.preventDefault();
-
+			//userloc = UserLocation.get();
+			Meteor.call('UserLocation/get', function(err, res) {
+				if(res) {console.log(res);
+				//councode = res.country_code;
+				councodeR = "SP";
+				console.log(councode);
+				}	
+			});
+			//councode = userloc.country_code;
+			//var newcouncode = councode;
+			//console.log(userloc.country_code);
+			//console.log(councode);
+			//console.log(newcouncode);
 			var scaleMult = 5; // scale multiplier for display
 			var vote = 1 * scaleMult; 
 			//var parseDate = d3.time.format("%a %b %d %Y").parse;
@@ -25,14 +40,35 @@ export default class Vote extends Component {
 			*/
 			//dateString = new Date;
 			//dateString = parseDate(dateString);
-			Meteor.call("increTrumps", vote, moment().dayOfYear(), function(e, r) {
+			if (councode == "US") {
+				/* So what I want to do in here is call UincreTrumps if it is a us press and 
+				WIncreTrumps if it is a world press. This necessitates switch from LineData to
+				ULineData and WLineData as well as new publications and subscriptions.. */
+				console.log("Trump pressed");
+				Meteor.call("increTrumps", vote, moment().dayOfYear(), function(e, r) {
+					if (e) alert(e.reason)
+				});
+			}else {
+				Meteor.call("WIncreTrumps", vote, moment().dayOfYear(), function(e, r) {
+					if (e) alert(e.reason)
+				});
+			}
+			/*Meteor.call("increTrumps", vote, moment().dayOfYear(), function(e, r) {
 				if (e) alert(e.reason)
-			});
+			});*/
 
 		}
 
 		handleRSubmit(e) {
 			//e.preventDefault();
+			Meteor.call('UserLocation/get', function(err, res) {
+				if(res) {console.log(res);
+				//councodeR = res.country_code;
+				councodeR = "SP";
+				console.log(councodeR);
+
+				}	
+			});
 
 			var scaleMult = 5; // scale multiplier for display
 			var vote = 1* scaleMult;
@@ -40,9 +76,16 @@ export default class Vote extends Component {
 			/*Meteor.call("increRumps", vote, moment().isoWeekday(), function(e, r) {
 				if (e) alert(e.reason)
 			});*/
+			if (councodeR == "US") {
+			console.log("Rump pressed");	
 			Meteor.call("increRumps", vote, moment().dayOfYear(), function(e,r) {
 				if (e) alert(e.reason)
 			});
+			} else {
+				Meteor.call("WIncreRumps", vote, moment().dayOfYear(), function(e, r) {
+					if (e) alert(e.reason)
+				});
+			}
 		}
 		
 	render() {

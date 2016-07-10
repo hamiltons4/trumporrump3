@@ -51,8 +51,21 @@ navbar {
 }
 
 .navbar img {
-	width: 200px;
+	width: 170px;
 	height: 35px;
+}
+
+.navbar li a {
+	padding-bottom: 5px;
+}
+
+.navbar .imnav {
+	width: 55px;
+}
+
+#aboutim {
+	width: 40px;
+	margin-right: 15px;
 }
 .head {
 	width: 100%;
@@ -509,7 +522,15 @@ closeButton {
 	overflow: auto;
 }
 
+#trumplist {
+	list-style-image: url("../../images/check.png");
+	list-style-position: inside;
+	font-size: 18px;
+}
 
+#trumplist li {
+	line-height: 30px;
+}
 
 
 

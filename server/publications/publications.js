@@ -5,6 +5,7 @@ import { Tweets4 } from '../../both/collections/tweets.js'
 import { TweetsTotal } from '../../both/collections/tweets.js'
 import { VoteCount } from '../../both/collections/tweets.js'
 import { LineData } from '../../both/collections/tweets.js'
+import { WLineData } from '../../both/collections/tweets.js'
 
 
 
@@ -35,4 +36,8 @@ Meteor.publish('votes', function() {
 
 Meteor.publish('linedat', function() {
 	return LineData.find();
-})
+});
+
+Meteor.publish('wlinedat', function() {
+	return WLineData.find();
+});

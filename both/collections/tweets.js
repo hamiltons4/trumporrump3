@@ -72,6 +72,17 @@ LineData.allow({
 	
 });
 
+export const WLineData = new Mongo.Collection("wlinedat");
+LineData.allow({
+	insert:function(){
+		return true;
+	},
+	update:function(){
+		return true;
+	}
+	
+});
+
 if (Meteor.isServer) {
 	//Meteor.publish('linedat', function() {
 		//return LineData.find();
@@ -101,8 +112,30 @@ Meteor.methods({
 		
 
 		return LineData.update({day: date}, {$inc: {rumps: vote}}, {upsert: true});
-	}	
+	},	
 	
+	WIncreTrumps:function(vote, date) {
+		vote = parseInt(vote); // this gives the ability to weight the vote..
+
+
+		check(vote, Number);
+		check(date, Number); //this was Number when it was isoWeekday
+		
+		
+
+		return WLineData.update({day: date}, {$inc: {trumps: vote}}, {upsert: true}); 
+	},
+
+	WIncreRumps:function(vote, date) {
+		vote = parseInt(vote);
+
+
+		check(vote, Number);
+		check(date, Number); // this was Number when it was isoWeekday
+		
+
+		return WLineData.update({day: date}, {$inc: {rumps: vote}}, {upsert: true});
+	}			
 
 	})
 

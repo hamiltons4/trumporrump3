@@ -7,6 +7,7 @@ import { Tweets4 } from './both/collections/tweets.js'
 import { TweetsTotal } from './both/collections/tweets.js'
 import { VoteCount } from './both/collections/tweets.js'
 import { LineData } from './both/collections/tweets.js'
+import { WLineData } from './both/collections/tweets.js'
 
 //import { T } from 'meteor/mrt:twit'
 //import { stream } from 'meteor/mrt:twit'
@@ -42,6 +43,24 @@ if (Meteor.isServer) {
 		}
 
 		timeObj = JSON.parse(Assets.getText("linesamp.json")).daily.forEach(function(doc) {
+			doc.day = new Date(doc.day);
+			//console.log(doc);
+			/*if (doc.rumps == 24) {
+				console.log("Heidi Ho!");
+			    //doc.day = new Date();
+			    doc.day = moment().toDate();
+			    console.log(doc.day);
+				//lineData.insert(doc);
+			}*/
+		});
+
+		if (WLineData.find().count() === 0) {
+			JSON.parse(Assets.getText("wlinesamp.json")).daily.forEach(function(doc) {
+				WLineData.insert(doc);
+			});
+		}
+
+		timeObj = JSON.parse(Assets.getText("wlinesamp.json")).daily.forEach(function(doc) {
 			doc.day = new Date(doc.day);
 			//console.log(doc);
 			/*if (doc.rumps == 24) {

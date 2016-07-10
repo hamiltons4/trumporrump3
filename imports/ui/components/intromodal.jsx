@@ -40,11 +40,11 @@ Imod = React.createClass({
 		 			bsStyle="primary"
 		 			bsSize="large"
 		 			//onClick={this.open.bind(this)}
-		 			onClick={this.open.bind(this)}
+		 			onClick={this.open}
 	 			>
 	 			    Show Intro
  				</Button>
- 				<Modal dialogClassName="md-content" show={this.state.showModal} onHide={this.close.bind(this)}>
+ 				<Modal dialogClassName="md-content" show={this.state.showModal} onHide={this.close}>
 		 			{/*
 		 			<Modal.Header dialogClassName="md-content" closeButton>
 		 				<Modal.Title>Modal Heading</Modal.Title>
@@ -54,10 +54,10 @@ Imod = React.createClass({
 					*/}
             		
             		<Modal.Body closeButton>
-            			<a className="close" onClick={this.close.bind(this)}>×</a>
+            			<a className="close" onClick={this.close}>×</a>
             			<h1>So, Which is it?</h1>
             			<p></p>
-            			<img className="logo" src={"images/TorRLogo.png"} alt="Trump or Rump"/>
+            			<img className="logo" src={"images/TorRLogo3.png"} alt="Trump or Rump"/>
             		</Modal.Body>
 
             		{/*	

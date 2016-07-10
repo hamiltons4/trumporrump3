@@ -22,7 +22,7 @@ import Wbar from '../components/wbar.jsx'
 import Imod from '../components/intromodal.jsx'
 
 //Data
-import { LineData } from '../../../both/collections/tweets.js'
+//import { LineData } from '../../../both/collections/tweets.js'
 
 let url = "https://github.com";
 
@@ -80,7 +80,7 @@ export const Homepage = (props) =>
 				<Ubar bardat={props.bardat}/>
 			</div>
 			<div className="wline">
-				<Wline linedat={props.linedat}/>
+				<Wline linedat={props.wlinedat}/>
 			</div>
 			<div className="wbar">
 				<Wbar wbardat={props.wbardat}/>

@@ -72,7 +72,7 @@ occasionally rose from the deep to do battle with them, were azdyryths, or sea-d
 			<Ubar bardat={props.bardat}/>
 		</div>
 		<div className="wline">
-			<Wline linedat={props.linedat}/>
+			<Wline linedat={props.wlinedat}/>
 		</div>
 		<div className="wbar">
 			<Wbar wbardat={props.wbardat}/>

@@ -1,0 +1,21 @@
+{
+	"daily":
+	[
+       	 
+       	 {"day":180, "trumps":10,"rumps":18},
+       	 {"day":181, "trumps":23,"rumps":11},
+       	 {"day":182, "trumps":7,"rumps":20},
+       	 {"day":183, "trumps":10,"rumps":10},
+       	 {"day":184, "trumps":4,"rumps":25},
+               {"day":185, "trumps":15,"rumps":5},
+               {"day":186, "trumps":10,"rumps":35},
+               {"day":187, "trumps":22,"rumps":21},
+               {"day":188, "trumps":25,"rumps":15},
+               {"day":189, "trumps":30,"rumps":25},
+               {"day":191, "trumps":40,"rumps":25},
+               {"day":192, "trumps":20,"rumps":40}
+
+
+
+	]
+}
