@@ -37,6 +37,18 @@ export const Trumppage = (props) =>
      people talk about nothing? Did you come here for something in particular or just general Riker-bashing? But the probability
       of making a six is no greater than that of rolling a seven. I suggest you drop it, Mr. Data. Travel time to the nearest
      starbase? I'll be sure to note that in my log.</li>
+     <li>Sure. You'd be surprised how far
+    a hug goes with Geordi, or Worf. Mr. Crusher, ready a collision course with the Borg ship. Ensign Babyface! Now, how the 
+    hell do we defeat an enemy that knows us better than we know ourselves? You enjoyed that. A lot of things can change in twelve
+     years, Admiral. The unexpected is our normal routine. Well, I'll say this for him - he's sure of himself. How long can two 
+     people talk about nothing? Did you come here for something in particular or just general Riker-bashing? But the probability
+      of making a six is no greater than that of rolling a seven. I suggest you drop it, Mr. Data. Travel time to the nearest
+     starbase? I'll be sure to note that in my log. Maybe if we felt any human loss as keenly as we feel one of those close to us, 
+     human history would be far less bloody. Is it my imagination, or have tempers become a little frayed on the ship lately? Why 
+     don't we just give everybody a promotion and call it a night - 'Commander'? We finished our first sensor sweep of the neutral
+     zone. I recommend you don't fire until you're within 40,000 kilometers. I'd like to think that I haven't changed those things, 
+     sir.
+     </li>
   </ul>
   {/*<p>I've had twelve years to think about it. And if I had it to do over again, I would have grabbed the phaser and pointed
    it at you instead of them. I'll alert the crew. Could someone survive inside a transporter buffer for 75 years? Earl Grey tea,
