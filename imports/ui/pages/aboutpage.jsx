@@ -2,14 +2,37 @@ import React, { Component, PropTypes } from 'react'
 import { FacebookButton, FacebookCount } from 'react-social'
 import { TwitterButton, RedditButton, GooglePlusButton, TumblrButton } from 'react-social'
 
+import Tshirts from '../components/tshirts.jsx'
+import Principles from '../components/principles.jsx'
+import Gps from '../components/gps.jsx'
+import Details from '../components/details.jsx'
+
 let url = "https://github.com";
 
 export const Aboutpage = (props) => 
 <div className="container-fluid" id="theA">
 <div className="container-fluid secondary">
-  <h1>About</h1>
+	<h1>About</h1>
+	<div className="row">
+		<div className="col-md-4" id="shirty">
+			<Tshirts />
+		</div>
+		<div className="col-md-8" id="aboutus">
+			<Details />
+		</div>		
+	</div>
+	<div className="row">
+		<div className="onprinciple">
+			<Principles/>
+		</div>
+		<div className="innerdirect">
+			<Gps/>
+		</div>
+	</div>  
+
+
 </div>
-<div className="foot">
+<div className="foot" id="aboutfoot">
 			<div className="buttonholder">
 				<FacebookButton url={url} className="btn btn-facebook">
 					<i className="fa fa-facebook"></i>

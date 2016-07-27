@@ -37,6 +37,15 @@ navbar {
 	width: 100%;
 }
 
+.navbar-nav > li > a {
+	padding-top: 15px;
+	/* padding-bottom: 15px; */
+}
+
+.navbar .imnav {
+	width: 44px;
+}
+
 .navbar-default .navbar-fixed-top {
 	/* background-color: #f8f8f8; */
 	background-color: #071E3E;
@@ -51,7 +60,7 @@ navbar {
 }
 
 .navbar img {
-	width: 170px;
+	/*width: 204px;*/
 	height: 35px;
 }
 
@@ -61,6 +70,14 @@ navbar {
 
 .navbar .imnav {
 	width: 55px;
+}
+
+#tnavlogo {
+	padding-right: 10px;
+}
+
+#rnavlogo {
+	padding-left: 0;
 }
 
 #aboutim {
@@ -415,7 +432,7 @@ navbar {
 	color: white;
 }
 
-closeButton {
+.closeButton {
 	color: white;
 
 
@@ -512,6 +529,33 @@ closeButton {
 
 }
 
+.onprinciple {
+	width: 98%;
+	float: none;
+	margin-top: 25px;
+	margin-bottom: 0;
+	background: dodgerblue;
+	overflow: auto;
+	margin: 0 auto;
+
+}
+
+.princip div {
+	float: left;
+	width: 33%;
+}
+
+.innerdirect {
+	width: 98%;
+	float: none;
+	margin-top: 25px;
+	margin-bottom: 0;
+	background: cornflowerblue;
+	overflow: auto;
+	margin: 0 auto;
+
+}
+
 .secondary {
 	/*position: fixed;*/
 	/*z-index: 999;*/
@@ -551,7 +595,9 @@ closeButton {
 }
 
 
-
+#aboutfoot {
+	margin-top: 20px;
+}
 
 
 
