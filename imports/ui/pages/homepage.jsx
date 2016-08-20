@@ -50,8 +50,8 @@ export const Homepage = (props) =>
 				<div className="col-md-6" id="display">
 					<div className="anim striped">
 						<p></p>
-						<img src={"../../images/laptop.png"} alt="Trump"/>
-						<img src={"../../images/mobile.png"} alt="Rump"/>
+						<img src={"../../images/TrumpM.png"} alt="Trump"/>
+						<img src={"../../images/RumpM.png"} alt="Rump"/>
 					</div>
 					<Vote />
 				</div>

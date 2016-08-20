@@ -14,6 +14,7 @@ export const Rumppage = (props) =>
 <div className="container-fluid" id="theR">
 <div className="container-fluid secondary">
     <h1>Rump.</h1>
+    <img className="pagegif" id="rumpgif" src={"../../images/RumpTalk4.gif"} alt="rump is a butthead who says unthinking uncaring and dangerous things"/>
     <ul id="rumplist">
     <li>"I can almost believe that you are of another world," she said, "for otherwise such ignorance were inexplicable.  
 Do you really mean that you do not know that the Sagoths are the creatures of the Mahars&mdash;the mighty Mahars who 

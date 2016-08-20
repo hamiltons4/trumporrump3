@@ -14,6 +14,7 @@ export const Trumppage = (props) =>
 <div className="container-fluid" id="theT">
 <div className="container-fluid secondary">
   <h1>Trump!</h1>
+  <img className="pagegif" id="trumpgif" src={"../../images/trumpmount14.gif"} alt="trump is awesome, makes money and builds beutiful buildings"/>
   <ul id="trumplist">
     <li>I've had twelve years to think about it. And if I had it to do over again, I would have grabbed the phaser and pointed
    it at you instead of them. I'll alert the crew. Could someone survive inside a transporter buffer for 75 years? Earl Grey tea,
