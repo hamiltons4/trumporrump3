@@ -12,6 +12,8 @@ var wtrumps = 0;
 var wrumps = 0;
 var bardat = [];
 var wbardat = [];
+var votewinner = 0; // votewinner is 0 if trump and 1 if rump
+
 /*
 const linedat = LineData.find().fetch();
 for (i=0; i<linedat.length; i++) {
@@ -33,6 +35,8 @@ export default createContainer(() => {
 	rumps = 0;
 	wtrumps = 0;
 	wrumps = 0;
+	//trumpWin = 0;
+	//rumpWin = 0;
 
 	for (i=0; i<linedat.length; i++) {
 			trumps = trumps + linedat[i].trumps;
@@ -48,6 +52,22 @@ export default createContainer(() => {
 			//console.log("totalR =" + rumps);
 		};
 
+	if (trumps+wtrumps > rumps+wrumps) {
+		console.log("Trump wins!");
+		//trumpWin = 1;
+		//rumpWin = 0;
+		votewinner = 0;
+
+		//console.log(trumpWin, rumpWin);
+	}else{
+		console.log("Rump wins!");
+		//trumpWin = 0;
+		//rumpWin = 1;
+		votewinner = 1;
+		//console.log(trumpWin, rumpWin);
+
+	}	
+
 	return {
 		//loaded,
 		//linedat:loaded?LineData.find().fetch():[], 
@@ -57,7 +77,10 @@ export default createContainer(() => {
 		bardat: [{qty: trumps, xlabel: "USATrumps"},
 				  {qty: rumps, xlabel: "USARumps"}],
 		wbardat: [{qty: wtrumps, xlabel: "USATrumps"},
-				   {qty: wrumps, xlabel: "USARumps"}],		  
+				   {qty: wrumps, xlabel: "USARumps"}],
+		votewinner: votewinner,		   
+
+
 	};
 		
 

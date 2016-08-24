@@ -187,14 +187,28 @@ navbar {
 }
 
 .anim {
-	height: 90%;
+	height: 88%;
+	/*height: 90%;*/
 	/*width: 100%;*/
 }
 
 .anim img {
-	height: 200px;
-	width: 200px;
+	height: 234px;
+	width: 90px;
 }
+
+/*---------------------------- Main Images and Animation ----------------------------*/
+.mainimg {
+	width: 80px;
+	height: 208px;
+}
+
+.animtext {
+	color: white;
+}
+/*---------------------------------------------------------------------------------*/
+
+
 /*----------------------------- VOTE ----------------------------------------- */
 .vote {
 	height: 9%;
@@ -603,7 +617,9 @@ navbar {
 .pagegif {
 	float: left;
 }
-
+#trumpgif {
+	width: 
+}
 
 
 

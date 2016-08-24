@@ -8,6 +8,7 @@ import { Navbar } from 'react-bootstrap'
 import { Button } from 'react-bootstrap'
 import { Modal } from 'react-bootstrap'
 
+
 import { Timeline } from 'react-twitter-widgets'
 import { FacebookButton, FacebookCount } from "react-social"
 import { TwitterButton, RedditButton, GooglePlusButton, TumblrButton } from 'react-social'
@@ -20,13 +21,14 @@ import Ubar from '../components/ubar.jsx'
 import Wline from '../components/wline.jsx'
 import Wbar from '../components/wbar.jsx'
 import Imod from '../components/intromodal.jsx'
+import Mainanim from '../components/mainanim.jsx'
 
 //Data
 //import { LineData } from '../../../both/collections/tweets.js'
 
 let url = "https://github.com";
 
-
+var today = moment().format('MMMM Do YYYY');
 
 
 
@@ -50,8 +52,9 @@ export const Homepage = (props) =>
 				<div className="col-md-6" id="display">
 					<div className="anim striped">
 						<p></p>
-						<img src={"../../images/TrumpM.png"} alt="Trump"/>
-						<img src={"../../images/RumpM.png"} alt="Rump"/>
+						<Mainanim votewinner={props.votewinner}/>
+						{/*<img className="mainimg" src={"../../images/TrumpM.png"} alt="Trump"/>
+						<img className="mainimg" src={"../../images/RumpM.png"} alt="Rump"/>*/}
 					</div>
 					<Vote />
 				</div>
