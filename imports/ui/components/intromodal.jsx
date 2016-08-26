@@ -1,12 +1,17 @@
+import { Session } from 'meteor/session'
 import React, { Component, PropTypes } from 'react';
 import { Button } from 'react-bootstrap';
 import { Modal } from 'react-bootstrap';
 
+var hasnotbeenopened = true;
+
 
 Imod = React.createClass({
 	getInitialState: function() {
+		Session.set("modalopen", "true");
 		return{
-			showModal: true,
+
+			showModal: hasnotbeenopened,
 		};
 			
 	},
@@ -25,6 +30,8 @@ Imod = React.createClass({
 	},
 
 	close() {
+		Session.set("modalopen", "false");
+		hasnotbeenopened = false;
 		this.setState({ showModal: false });
 	},	
 

@@ -30,8 +30,8 @@ componentDidMount() {
 			<div>
 				<h3 className="animtext">Today {today}</h3>
 				<h4>{winner}</h4>
-				<img className="mainimg" src={"../../images/TrumpM.png"} alt="Trump"/>
-				<img className="mainimg" src={"../../images/RumpM.png"} alt="Rump"/>
+				<img className="mainimg shake-little shake-constant" id="trumpmainimg" src={"../../images/TrumpM.png"} alt="Trump"/>
+				<img className="mainimg shake-little shake-constant" id="rumpmainimg" src={"../../images/RumpM.png"} alt="Rump"/>
 
 			</div>
 		)

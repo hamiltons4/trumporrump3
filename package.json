@@ -5,6 +5,8 @@
     "start": "meteor run"
   },
   "dependencies": {
+    "classnames": "^2.2.5",
+    "index.js": "0.0.3",
     "meteor-node-stubs": "^0.2.3",
     "react": "^15.1.0",
     "react-bootstrap": "^0.29.5",

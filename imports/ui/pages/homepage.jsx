@@ -3,6 +3,8 @@ import React, { Component, PropTypes } from 'react'
 //import { createContainer } from 'meteor/react-meteor-data'
 import { ReactDOM }  from 'react-dom'
 import { Meteor } from 'meteor/meteor'
+import { Session } from 'meteor/session'
+import { csshake } from 'csshake'
 
 import { Navbar } from 'react-bootstrap'
 import { Button } from 'react-bootstrap'
