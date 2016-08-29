@@ -201,11 +201,22 @@ navbar {
 .mainimg {
 	width: 80px;
 	height: 208px;
+	/*bottom: -50px;*/
+	position: relative;
+	bottom: -224px;
+
 }
+/*
+#trumpmainimg {
+	left: -500px;
+}
+*/
 
 .animtext {
 	color: white;
 }
+
+
 /*---------------------------------------------------------------------------------*/
 
 

@@ -1,6 +1,8 @@
 import { Meteor } from 'meteor/meteor'
 import { createContainer } from 'meteor/react-meteor-data'
 import { AppLayout } from '../layouts/app_layout'
+import { Tracker } from 'meteor/tracker'
+import { Session } from 'meteor/session'
 
 import { LineData } from '../../../both/collections/tweets.js'
 import { WLineData } from '../../../both/collections/tweets.js'
@@ -13,6 +15,8 @@ var wrumps = 0;
 var bardat = [];
 var wbardat = [];
 var votewinner = 0; // votewinner is 0 if trump and 1 if rump
+//var animclass = "";
+//var animclass1 = "";
 
 /*
 const linedat = LineData.find().fetch();
@@ -31,6 +35,8 @@ export default createContainer(() => {
 	Meteor.subscribe('wlinedat');
 	const linedat = LineData.find().fetch();
 	const wlinedat = WLineData.find().fetch();
+	var animclass = "";
+	
 	trumps = 0;
 	rumps = 0;
 	wtrumps = 0;
@@ -66,7 +72,36 @@ export default createContainer(() => {
 		votewinner = 1;
 		//console.log(trumpWin, rumpWin);
 
-	}	
+	}
+	/*
+	Tracker.autorun(function () {
+			//var animclass = 'mainimg';
+            if ( Session.equals("modalopen", "true")) {
+            	console.log("Tracker1");
+         		animclass = "mainimg shake-little shake-constant";	//return;
+         		//console.log(animclass);
+         		//Session.set("sesanimclass", animclass);
+            }else {
+  				console.log("Tracker2");
+  				animclass = "mainimg";
+  				//console.log(animclass);
+  				//Session.set("sesanimclass", animclass);
+  			}
+  			return animclass;
+		}); 
+	*/	
+		 if ( Session.equals("modalopen", "false")) {
+            	console.log("Tracker1");
+         		animclass = "mainimg shake-little shake-constant";	//return;
+         		//console.log(animclass);
+         		//Session.set("sesanimclass", animclass);
+            }else {
+  				console.log("Tracker2");
+  				animclass = "mainimg";
+  				//console.log(animclass);
+  				//Session.set("sesanimclass", animclass);
+  			}
+				
 
 	return {
 		//loaded,
@@ -78,7 +113,8 @@ export default createContainer(() => {
 				  {qty: rumps, xlabel: "USARumps"}],
 		wbardat: [{qty: wtrumps, xlabel: "USATrumps"},
 				   {qty: wrumps, xlabel: "USARumps"}],
-		votewinner: votewinner,		   
+		votewinner: votewinner,	
+		animclass: animclass,
 
 
 	};

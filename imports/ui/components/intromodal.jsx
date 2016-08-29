@@ -4,14 +4,16 @@ import { Button } from 'react-bootstrap';
 import { Modal } from 'react-bootstrap';
 
 var hasnotbeenopened = true;
+Session.set("modalopen", "true");
 
 
 Imod = React.createClass({
 	getInitialState: function() {
-		Session.set("modalopen", "true");
+		//Session.set("modalopen", "true");
 		return{
 
 			showModal: hasnotbeenopened,
+			//showModal: Session.get("modalopen"),
 		};
 			
 	},
@@ -36,6 +38,7 @@ Imod = React.createClass({
 	},	
 
 	open() {
+		Session.set("modalopen", "true"); //I may remove this line as I don't want animation change from the show intro button
 		console.log("open");
 		this.setState({ showModal: true });
 	},
