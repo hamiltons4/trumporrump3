@@ -90,6 +90,7 @@ export default createContainer(() => {
   			return animclass;
 		}); 
 	*/	
+	
 		 if ( Session.equals("modalopen", "false")) {
             	console.log("Tracker1");
          		animclass = "mainimg shake-little shake-constant";	//return;
@@ -100,9 +101,16 @@ export default createContainer(() => {
   				animclass = "mainimg";
   				//console.log(animclass);
   				//Session.set("sesanimclass", animclass);
-  			}
-				
 
+  			}
+		/*		
+		if (animclass == "mainimg shake-little shake-constant")	{
+			setTimeout(function() {
+  			    animclass = "mainimg";
+  			    console.log("timeout");
+			}, 2000);
+		}
+		*/
 	return {
 		//loaded,
 		//linedat:loaded?LineData.find().fetch():[], 

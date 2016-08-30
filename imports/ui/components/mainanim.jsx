@@ -7,6 +7,7 @@ import { moment } from 'meteor/momentjs:moment'
 var classNames = require('classnames');
 var today = moment().format('MMMM Do YYYY');
 var winner = "";
+var nonwinner = "";
 
 /*
 	So what I want to do here is total both the US and world Trumps and the US and world Rumps and
@@ -40,6 +41,19 @@ componentDidMount() {
 	}else{
 		winner = "Trump";
 	}
+
+	/* 	i want the second moving animation to start after the modal is closed so from here that means animclass = 
+		the shaking one.. so if animclass is shaking then a delay. turn off animclasss and the winner based on 
+		votewinner move up and the other move right. So to do this I could write my own shake animation and then 
+		run it in series with the rest or I could turn off the shake after about 1.5 seconds and then turn off the
+		shake hopefully using the custom shake.  It appears the app container cannot go down into functions only
+		if, then, for in the container. So, given the shake runs for a certain duration I could set a delay on what
+		ever following animation. I would need four following animations, for each svg depending on whether it wins
+		or loses. I already have the ids. And I have votewinner inside the mainimg component. But I can make a 
+		session variable based on votewinner. So I can leave the shake classname and based on votewinner send a
+		session that is in an if in the container so the id is appended with winner or loser and then I have four
+		animations based on the trumpwinner trumploser rumpwinner and rumploser ids!
+	*/
 
 	//var animclass = 'mainimg';
 	//Session.set("test", "mainimg  shake-little shake-constant");
@@ -108,8 +122,12 @@ componentDidMount() {
 				<img className="mainimg"  id="rumpmainimg" src={"../../images/RumpM.png"} alt="Rump"/>*/}
 				{/*<img className={startComputation()} id="trumpmainimg" src={"../../images/TrumpM.png"} alt="Trump"/>
 				<img className={startComputation()} id="rumpmainimg" src={"../../images/RumpM.png"} alt="Rump"/>*/}
-				<img className={this.props.animclass} id="trumpmainimg" src={"../../images/TrumpM.png"} alt="Trump"/>
-				<img className={this.props.animclass} id="rumpmainimg" src={"../../images/RumpM.png"} alt="Rump"/>
+				<img className={this.props.animclass} id={"trumpmainimg"+this.props.votewinner} src={"../../images/TrumpM.png"} alt="Trump"/>
+				<img className={this.props.animclass} id={"rumpmainimg"+this.props.votewinner} src={"../../images/RumpM.png"} alt="Rump"/>
+				{/*<img className={Session.get("sesanimclass")} id="trumpmainimg" src={"../../images/TrumpM.png"} alt="Trump"/>
+				<img className={Session.get("sesanimclass")} id="rumpmainimg" src={"../../images/RumpM.png"} alt="Rump"/>*/}
+				
+
 
 			</div>
 		)
