@@ -39,7 +39,16 @@ export const Homepage = (props) =>
 <div className="container-fluid" id="theone">
 	<div className="container-fluid main">
 			<div className="row">
-				<div className="col-md-3" id="trumpbar">
+				<div className="col-md-6 col-md-push-3" id="display">
+					<div className="anim striped">
+						<p></p>
+						<Mainanim votewinner={props.votewinner} animclass={props.animclass}/>
+						{/*<img className="mainimg" src={"../../images/TrumpM.png"} alt="Trump"/>
+						<img className="mainimg" src={"../../images/RumpM.png"} alt="Rump"/>*/}
+					</div>
+					<Vote />
+				</div>
+				<div className="col-md-3 col-md-pull-6" id="trumpbar">
 					<h3>Tweets Trump!</h3>
 					<Timeline 
 						widgetId={'733155093067898880'}
@@ -50,15 +59,6 @@ export const Homepage = (props) =>
 						}}
 						onload={() => console.log('Twitter Trump is loaded!')}
 					/>
-				</div>
-				<div className="col-md-6" id="display">
-					<div className="anim striped">
-						<p></p>
-						<Mainanim votewinner={props.votewinner} animclass={props.animclass}/>
-						{/*<img className="mainimg" src={"../../images/TrumpM.png"} alt="Trump"/>
-						<img className="mainimg" src={"../../images/RumpM.png"} alt="Rump"/>*/}
-					</div>
-					<Vote />
 				</div>
 				<div className="col-md-3" id="rumpbar">
 					<h3>Tweets Rump.</h3>

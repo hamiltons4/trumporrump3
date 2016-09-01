@@ -46,6 +46,7 @@ navbar {
 	width: 44px;
 }
 
+
 .navbar-default .navbar-fixed-top {
 	/* background-color: #f8f8f8; */
 	background-color: #071E3E;
@@ -62,6 +63,7 @@ navbar {
 .navbar img {
 	/*width: 204px;*/
 	height: 35px;
+	display: block;
 }
 
 .navbar li a {
@@ -231,11 +233,16 @@ navbar {
 
 #trumpmainimg0 {
 	/* Trump wins, up and larger */
+	animation: successtrump ease 4s;
+	animation-iteration-count: 1;
+	transform-origin: 50% 50%;
+	animation-fill-mode: forwards;
+	/*animation-delay: 5s;*/
 }
 
 #rumpmainimg1 {
 	/* rump wins, up and larger */
-	animation: successtrump ease 4s;
+	animation: successrump ease 4s;
 	animation-iteration-count: 1;
 	transform-origin: 50% 50%;
 	animation-fill-mode: forwards;
@@ -245,6 +252,20 @@ navbar {
 
 #rumpmainimg0 {
 	/* rump loses, to the right and smaller */
+	animation: notawinrump ease 4s;
+	animation-iteration-count: 1;
+	transform-origin: 50% 50%;
+	animation-fill-mode: forwards;
+}
+
+@keyframes successrump{
+	0% {
+		transform: translate(0, 0);
+	}
+
+	100% {
+		transform: translate(0, -150px) scaleX(1.5) scaleY(1.5);
+	}
 }
 
 @keyframes successtrump{
@@ -264,6 +285,16 @@ navbar {
 
 	100% {
 		transform: translate(-100px,0) scaleX(0.5) scaleY(0.5);
+	}
+}
+
+@keyframes notawinrump{
+	0% {
+		transform: translate(0, 0);
+	}
+
+	100% {
+		transform: translate(100px,0) scaleX(0.5) scaleY(0.5);
 	}
 }
 
@@ -684,8 +715,13 @@ navbar {
 
 
 
+/*============================== Media Queries ===============================*/ 
+@media (max-width: 767px) { 
+	.striped {
+		margin-top: 200px;
+	}
 
-
+}
 
 
 

@@ -9,7 +9,7 @@ export const AppLayout = (props) => {
 		<Navbar className="topnav" fixedTop>
 			{/*<div className="container-fluid" id="toppynav">*/}
 				<Navbar.Header>
-						<a className="navbar-brand" href="/"><img src={"../../images/TorRLogo9.png"} alt="Trump Or Rump"/></a>
+						<a className="navbar-brand" id="mainlogo1" href="/"><img src={"../../images/TorRLogo9.png"} alt="Trump Or Rump"/></a>
 				</Navbar.Header>
 				<ul className="nav navbar-nav navbar-right">
 					<li><a href="/trump" id="tnavlogo"><img className="imnav" src={"../../images/TLogo.png"} alt="Trump"/></a></li>
