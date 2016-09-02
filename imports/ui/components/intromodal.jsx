@@ -67,7 +67,7 @@ Imod = React.createClass({
             			<a className="close" onClick={this.close}>×</a>
             			<h1>So, Which is it?</h1>
             			<p></p>
-            			<img className="logo" src={"images/TorRLogo3.png"} alt="Trump or Rump"/>
+            			<img className="logo img-responsive" src={"images/TorRLogo3.png"} alt="Trump or Rump"/>
             		</Modal.Body>
 
             		{/*	

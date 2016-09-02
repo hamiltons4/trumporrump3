@@ -571,7 +571,9 @@ navbar {
 
 .modal-body img {
 	position: absolute;
-	left: -500px;
+	left: -600px;
+	max-width: 100%
+	height: auto;
 	/*transform: translate(500px);*/
 }
 .modal-body img {
@@ -587,7 +589,7 @@ navbar {
 
 @keyframes moved {
 	100% {
-		transform: translate(550px);
+		transform: translate(600px);
 	}
 }
 /*============================= Trumppage Rumppage Aboutpage ====================================*/
