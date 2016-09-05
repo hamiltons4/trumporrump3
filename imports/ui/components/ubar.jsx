@@ -1,38 +1,74 @@
 import React, { Component, PropTypes } from 'react';
+import { jQuery } from 'meteor/jquery'
 import d3 from 'd3';
 
 import { underscore } from 'meteor/underscore';
 import { moment } from 'meteor/momentjs:moment';
 import ReactDOM from 'react-dom';
 
-
-
+//var width1 = 250;
+//var width = this.props.width;
+//var height = this.props.height;
 
 Ubar = React.createClass({
+	componentWillMount: function() {
+		var _self=this;
+		$(window).on('resize', function(e) {
+			_self.updateSize();
+		});
+		//this.setState({width:width});
+	},
+
 
 	componentDidMount: function() {
 		var el = ReactDOM.findDOMNode(this);
 		//var el = this.getDOMNode(); //render this
 		var svg1 = d3.select(el)
 					.append("svg")
-					.attr("class", "bar1")
+					.attr("class", "bar1") //i can add another class here
 					.attr("width", this.props.width)
-					.attr("height", this.props.height);
-		this.updateChart(this.props);	
+					.attr("height", this.props.height)
+					.attr("viewBox", "0 0" + "width" + " " + "height")
+					.attr("preserveAspectRatio", "xMidYMid meet");
+		this.updateSize();			
+		this.updateChart(this.props);
+			
 	},
 
 	componentWillUpdate: function(nextProps) {
 		this.updateChart(nextProps);
 	},
-   
+	
+	componentWillUnmount: function() {
+		$(window).off('resize');
+	},
+    
     getDefaultProps: function() {
     	return {
-    		width:  250,
-    		height: 70,
+    		width:  250, //250
+    		height: 70, //70
     		data: [] // added with createContainer for initial..
     	}
     },
+    
+    updateSize: function() {
+    	var el = ReactDOM.findDOMNode(this);
+    	var parentWidth=$(el).width();
+    	Session.set("ubsize", parentWidth);
+    	console.log("parentWidth"+parentWidth);
+    	console.log("this"+this.props.width);
+    	/*
+    	if(parentWidth<this.props.width){
+    		this.setState({width:parentWidth-20});
 
+    		//console.log(width);
+    	}else{
+    		//this.setState({width1:this.props.width});
+    		this.setState({width:parentWidth});
+    	}
+    	*/
+    },
+	
     updateChart: function(props) {
     	var data = props.bardat;
     	//var data = props.data;

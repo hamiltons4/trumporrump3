@@ -9,8 +9,14 @@ import ReactDOM from 'react-dom';
 
 
 Wbar = React.createClass ({
+	componentWillMount: function() {
+		var _self=this;
+		$(window).on('resize', function(e) {
+			_self.updateSize();
+		});
+	},
 
-componentDidMount: function() {
+	componentDidMount: function() {
 		var el2 = ReactDOM.findDOMNode(this);
 		//var el2 = this.getDOMNode(); //render this
 		var svg2 = d3.select(el2)
@@ -18,12 +24,16 @@ componentDidMount: function() {
 					.attr("class", "bar2")
 					.attr("width", this.props.width)
 					.attr("height", this.props.height);
-
+		this.updateSize();
 		this.updateChart(this.props);	
 	},
 
 	componentWillUpdate: function(nextProps) {
 		this.updateChart(nextProps);
+	},
+
+	componentWillUnmount: function() {
+		$(window).off('resize');
 	},
    
     getDefaultProps: function() {
@@ -32,6 +42,12 @@ componentDidMount: function() {
     		height: 70,
     		data: []
     	}
+    },
+
+    updateSize: function() {
+    	var el2 = ReactDOM.findDOMNode(this);
+    	var parentWidth=$(el2).width();
+    	Session.set("wbsize", parentWidth);
     },
 
     updateChart: function(props) {

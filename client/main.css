@@ -574,6 +574,7 @@ navbar {
 	left: -600px;
 	max-width: 100%
 	height: auto;
+
 	/*transform: translate(500px);*/
 }
 .modal-body img {
@@ -719,12 +720,19 @@ navbar {
 
 /*============================== Media Queries ===============================*/ 
 @media (max-width: 767px) { 
-	.striped {
+	#display {
 		margin-top: 200px;
 	}
-
+	.data {
+		height: 160px;
+	}
+	/*
+	.wline {
+		float: left;
+		clear: left;
+	}
+	*/
 }
-
 
 
 

@@ -82,13 +82,13 @@ export const Homepage = (props) =>
 				<Uline linedat={props.linedat}/>
 			</div>
 			<div className="ubar">
-				<Ubar bardat={props.bardat}/>
+				<Ubar bardat={props.bardat} width={props.ubsizer}/>
 			</div>
 			<div className="wline">
 				<Wline linedat={props.wlinedat}/>
 			</div>
 			<div className="wbar">
-				<Wbar wbardat={props.wbardat}/>
+				<Wbar wbardat={props.wbardat} width={props.wbsizer}/>
 			</div>
 	</div>
 	<div className="foot">

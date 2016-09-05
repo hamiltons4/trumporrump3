@@ -15,6 +15,7 @@ var wrumps = 0;
 var bardat = [];
 var wbardat = [];
 var votewinner = 0; // votewinner is 0 if trump and 1 if rump
+
 //var animclass = "";
 //var animclass1 = "";
 
@@ -36,6 +37,8 @@ export default createContainer(() => {
 	const linedat = LineData.find().fetch();
 	const wlinedat = WLineData.find().fetch();
 	var animclass = "";
+	var ubsizer = 0;
+	var wbsizer = 0;
 	
 	trumps = 0;
 	rumps = 0;
@@ -103,6 +106,9 @@ export default createContainer(() => {
   				//Session.set("sesanimclass", animclass);
 
   			}
+
+  	ubsizer = Session.get("ubsize");
+  	wbsizer = Session.get("wbsize");		
 		/*		
 		if (animclass == "mainimg shake-little shake-constant")	{
 			setTimeout(function() {
@@ -123,6 +129,8 @@ export default createContainer(() => {
 				   {qty: wrumps, xlabel: "USARumps"}],
 		votewinner: votewinner,	
 		animclass: animclass,
+		ubsizer: ubsizer,
+		wbsizer: wbsizer,
 
 
 	};
