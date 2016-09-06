@@ -47,7 +47,11 @@ Wbar = React.createClass ({
     updateSize: function() {
     	var el2 = ReactDOM.findDOMNode(this);
     	var parentWidth=$(el2).width();
-    	Session.set("wbsize", parentWidth);
+    	if (parentWidth<153) {
+    		Session.set("wbsize", parentWidth);
+    	}else{
+    		Session.set("wbsize", 153);
+    	}	
     },
 
     updateChart: function(props) {

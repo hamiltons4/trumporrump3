@@ -16,7 +16,7 @@ Ubar = React.createClass({
 		$(window).on('resize', function(e) {
 			_self.updateSize();
 		});
-		//this.setState({width:width});
+		//this.setState({width:width});this.setState({width:this.props.width})?
 	},
 
 
@@ -28,8 +28,8 @@ Ubar = React.createClass({
 					.attr("class", "bar1") //i can add another class here
 					.attr("width", this.props.width)
 					.attr("height", this.props.height)
-					.attr("viewBox", "0 0" + "width" + " " + "height")
-					.attr("preserveAspectRatio", "xMidYMid meet");
+					/*.attr("viewBox", "0 0" + "width" + " " + "height")
+					.attr("preserveAspectRatio", "xMidYMid meet");*/
 		this.updateSize();			
 		this.updateChart(this.props);
 			
@@ -54,17 +54,22 @@ Ubar = React.createClass({
     updateSize: function() {
     	var el = ReactDOM.findDOMNode(this);
     	var parentWidth=$(el).width();
-    	Session.set("ubsize", parentWidth);
+    	if (parentWidth<250) {
+    		Session.set("ubsize", parentWidth);
+    	}else{
+    		Session.set("ubsize", 250);
+    	}
     	console.log("parentWidth"+parentWidth);
     	console.log("this"+this.props.width);
     	/*
     	if(parentWidth<this.props.width){
-    		this.setState({width:parentWidth-20});
-
+    		//this.setState({width:parentWidth-20});
+			Session.set("ubsize", parentWidth-10);
     		//console.log(width);
     	}else{
     		//this.setState({width1:this.props.width});
-    		this.setState({width:parentWidth});
+    		//this.setState({width:parentWidth});
+			Session.set("ubsize", parentWidth);
     	}
     	*/
     },

@@ -10,6 +10,13 @@ import ReactDOM from 'react-dom';
 
 Wline = React.createClass({
 
+componentWillMount: function() {
+	var _self=this;
+	$(window).on('resize', function(e) {
+		_self.updateSize();
+	});
+},	
+
 componentDidMount: function() {
 	var el4 = ReactDOM.findDOMNode(this);
 	//var el4 = this.getDOMNode(); //render baby
@@ -170,7 +177,19 @@ componentDidMount: function() {
 },
 
 componentWillUpdate: function(nextProps) {
+	this.updateSize();
 	this.updateChart(nextProps);
+
+},
+
+componentWilUnmount: function() {
+	$(window).off('resize');
+},
+
+updateSize: function() {
+	var el4 = ReactDOM.findDOMNode(this);
+	var parentWidth=$(el4).width();
+	Session.set("wlsize", parentWidth);
 },
 
 getDefaultProps: function() {

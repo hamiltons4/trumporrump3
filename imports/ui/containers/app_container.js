@@ -39,6 +39,8 @@ export default createContainer(() => {
 	var animclass = "";
 	var ubsizer = 0;
 	var wbsizer = 0;
+	var ulsizer = 0;
+	var wlsizer = 0;
 	
 	trumps = 0;
 	rumps = 0;
@@ -108,7 +110,9 @@ export default createContainer(() => {
   			}
 
   	ubsizer = Session.get("ubsize");
-  	wbsizer = Session.get("wbsize");		
+  	wbsizer = Session.get("wbsize");
+  	ulsizer = Session.get("ulsize");
+  	wlsizer = Session.get("wlsize");		
 		/*		
 		if (animclass == "mainimg shake-little shake-constant")	{
 			setTimeout(function() {
@@ -131,6 +135,8 @@ export default createContainer(() => {
 		animclass: animclass,
 		ubsizer: ubsizer,
 		wbsizer: wbsizer,
+		ulsizer: ulsizer,
+		wlsizer: wlsizer,
 
 
 	};

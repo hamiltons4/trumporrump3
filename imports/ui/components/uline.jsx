@@ -9,7 +9,13 @@ import ReactDOM from 'react-dom';
 
 
 Uline = React.createClass({
-	
+
+componentWillMount: function() {
+	var _self=this;
+	$(window).on('resize', function(e) {
+		_self.updateSize();
+	});
+},	
 	
 componentDidMount() {
 	var el3 = ReactDOM.findDOMNode(this);
@@ -88,14 +94,27 @@ componentDidMount() {
               "stroke": "red",
               "stroke-width": 2,
               "fill": "none",
-              "class": "ray4"
-          });     	                    				
+              "class": "ray4"             
+          }); 
+
 
 	//this.updateChart(this.props);
 },
 componentWillUpdate(nextProps) {
+	this.updateSize();
 	this.updateChart(nextProps);
 },
+
+componentWillUnmount: function() {
+	$(window).off('resize');
+},
+
+updateSize: function() {
+	var el3 = ReactDOM.findDOMNode(this);
+	var parentWidth=$(el3).width();
+	Session.set("ulsize", parentWidth);
+},
+
 
 getDefaultProps() {
 	return {
