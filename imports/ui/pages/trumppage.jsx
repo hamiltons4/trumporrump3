@@ -147,16 +147,16 @@ export const Trumppage = (props) =>
   </div>
   <div className='data'>
 	   <div className="uline">
-			<Uline linedat={props.linedat}/>
+			<Uline linedat={props.linedat} width={props.ulsizer}/>
 		</div>
 		<div className="ubar">
-			<Ubar bardat={props.bardat}/>
+			<Ubar bardat={props.bardat} width={props.ubsizer}/>
 		</div>
 		<div className="wline">
-			<Wline linedat={props.wlinedat}/>
+			<Wline linedat={props.wlinedat} width={props.wlsizer}/>
 		</div>
 		<div className="wbar">
-			<Wbar wbardat={props.wbardat}/>
+			<Wbar wbardat={props.wbardat} width={props.wbsizer}/>
 		</div>
   </div>
   <div className="foot">

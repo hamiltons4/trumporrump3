@@ -723,6 +723,10 @@ navbar {
 	#display {
 		margin-top: 200px;
 	}
+
+	.secondary {
+		margin-top: 250px;
+	}
 	/*
 	.data {
 		height: 160px;

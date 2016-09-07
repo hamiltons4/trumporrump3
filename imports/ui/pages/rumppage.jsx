@@ -14,7 +14,7 @@ export const Rumppage = (props) =>
 <div className="container-fluid" id="theR">
 <div className="container-fluid secondary">
     <h1>Rump.</h1>
-    <img className="pagegif" id="rumpgif" src={"../../images/RumpTalk4.gif"} alt="rump is a butthead who says unthinking uncaring and dangerous things"/>
+    <img className="pagegif img-responsive" id="rumpgif" src={"../../images/RumpTalk4.gif"} alt="rump is a butthead who says unthinking uncaring and dangerous things"/>
     <ul id="rumplist">
     <li>"I can almost believe that you are of another world," she said, "for otherwise such ignorance were inexplicable.  
 Do you really mean that you do not know that the Sagoths are the creatures of the Mahars&mdash;the mighty Mahars who 
@@ -101,16 +101,16 @@ occasionally rose from the deep to do battle with them, were azdyryths, or sea-d
 </div>
 <div className='data'>
 	   <div className="uline">
-			<Uline linedat={props.linedat}/>
+			<Uline linedat={props.linedat} width={props.ulsizer}/>
 		</div>
 		<div className="ubar">
-			<Ubar bardat={props.bardat}/>
+			<Ubar bardat={props.bardat} width={props.ubsizer}/>
 		</div>
 		<div className="wline">
-			<Wline linedat={props.wlinedat}/>
+			<Wline linedat={props.wlinedat} width={props.wlsizer}/>
 		</div>
 		<div className="wbar">
-			<Wbar wbardat={props.wbardat}/>
+			<Wbar wbardat={props.wbardat} width={props.wbsizer}/>
 		</div>
   </div>
   <div className="foot">
