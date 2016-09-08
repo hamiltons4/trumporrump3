@@ -34,14 +34,39 @@ if (Meteor.isClient) {
 
 if (Meteor.isServer) {
 	Meteor.startup(function () {
-		
+		var dayvariable = moment().dayOfYear();
 		// Insert sample data if the LineData collection is empty
+		/*
 		if (LineData.find().count() === 0) {
 			JSON.parse(Assets.getText("linesamp.json")).daily.forEach(function(doc) {
 				LineData.insert(doc);
+				
 			});
 		}
-
+		*/
+		/*
+		if (LineData.find().count() === 0) {
+			JSON.parse(Assets.getText("linesamp.json")).daily.forEach(function(doc) {
+				LineData.insert(doc, function(err, docinserted) {
+					if (err) return;
+					console.log(dayvariable);
+					LineData.update({_id: docinserted._id}, { $set: {day: dayvariable }});	
+					dayvariable++;
+				});
+				
+				
+			});
+		}
+		*/
+		if (LineData.find().count() === 0 ) {
+			for (i= 1; i < 13; ++i) {
+				console.log(i);
+				LineData.insert({"day": (dayvariable-12)+i, 
+									"rumps": Math.floor(Math.random() * (45 - 1+1)) + 1, 
+									"trumps": Math.floor(Math.random() * (45 - 1+1)) + 1 });
+			}
+		}
+		/*
 		timeObj = JSON.parse(Assets.getText("linesamp.json")).daily.forEach(function(doc) {
 			doc.day = new Date(doc.day);
 			//console.log(doc);
@@ -52,14 +77,23 @@ if (Meteor.isServer) {
 			    console.log(doc.day);
 				//lineData.insert(doc);
 			}*/
-		});
-
+		//});
+		/*
 		if (WLineData.find().count() === 0) {
 			JSON.parse(Assets.getText("wlinesamp.json")).daily.forEach(function(doc) {
 				WLineData.insert(doc);
 			});
 		}
-
+		*/
+		if (WLineData.find().count() === 0 ) {
+			for (i= 1; i < 13; ++i) {
+				console.log(i);
+				WLineData.insert({"day": (dayvariable-12)+i, 
+									"rumps": Math.floor(Math.random() * (45 - 1+1)) + 1, 
+									"trumps": Math.floor(Math.random() * (45 - 1+1)) + 1 });
+			}
+		}
+		/*
 		timeObj = JSON.parse(Assets.getText("wlinesamp.json")).daily.forEach(function(doc) {
 			doc.day = new Date(doc.day);
 			//console.log(doc);
@@ -70,7 +104,7 @@ if (Meteor.isServer) {
 			    console.log(doc.day);
 				//lineData.insert(doc);
 			}*/
-		});
+		//});
 
 		console.log(moment().dayOfYear());
 		
@@ -110,7 +144,7 @@ if (Meteor.isServer) {
 
 			
 		*/
-		     T.get('search/tweets', {q: 'trump%3A%29; since:2016-06-22 until:2016-06-23', count: 100}, Meteor.bindEnvironment(function(err, data, response) {
+		     T.get('search/tweets', {q: 'trump%3A%29; since:2016-09-07 until:2016-09-14', count: 100}, Meteor.bindEnvironment(function(err, data, response) {
 		   // T.get('search/tweets', {q: 'chicken since:2016-04-11 until:2016-04-12', count: 100}, Meteor.bindEnvironment(function(err, data, response) {
 			//console.log(data);
 			//var g = "";
@@ -157,8 +191,8 @@ if (Meteor.isServer) {
 	        //console.log(like);
 	        searchstring = 'pizza &#58;&#40; since:2016-04-01 until:2016-04-03'; //this uses the html entity (hex char) for the emoticon mood search in twitter
 	        searchstring2 = 'pizza%3A%28 since:2016-04-01 until:2016-04-03';
-	        searchstring3 = 'trum%3A%28 since:2016-06-22'; //Keeping this within the twitter search date limits prevents 'can't read  created_at of undefined' error.
-	        searchstring4 = 'until:2016-06-23';
+	        searchstring3 = 'trum%3A%28 since:2016-09-07'; //Keeping this within the twitter search date limits prevents 'can't read  created_at of undefined' error.
+	        searchstring4 = 'until:2016-09-14';
 	        T.get('search/tweets', {q: searchstring3 + searchstring4, count: 100}, Meteor.bindEnvironment(
 	        	function(err, data, response) {
 
