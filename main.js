@@ -60,12 +60,16 @@ if (Meteor.isServer) {
 		*/
 		if (LineData.find().count() === 0 ) {
 			for (i= 1; i < 13; ++i) {
-				console.log(i);
+				//console.log(i);
 				LineData.insert({"day": (dayvariable-12)+i, 
 									"rumps": Math.floor(Math.random() * (45 - 1+1)) + 1, 
 									"trumps": Math.floor(Math.random() * (45 - 1+1)) + 1 });
 			}
-		}
+		}//else{
+			//if its not equal to zero, add the next day, and remove the earliest day. we must keep the total however.
+			// alternately, at midnight take the totals and... ultimately it will be all votes
+			// so I want to keep the total from all deleted days and add that to the ongoing twelve day total
+		//}
 		/*
 		timeObj = JSON.parse(Assets.getText("linesamp.json")).daily.forEach(function(doc) {
 			doc.day = new Date(doc.day);

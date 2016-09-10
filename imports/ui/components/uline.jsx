@@ -39,10 +39,25 @@ componentDidMount() {
 	var yScale = d3.scale.linear()
 		.domain([0, trueMax])
 		.range([(this.props.height-15), 0]);
-
+	/*
 	var xScale = d3.scale.ordinal()
 		.domain([1,2,3,4,5,6,7,8,9,10,11,12])
 		.range([33,66,99,132,165,198,231,264,297,330,363,396]);	
+	*/
+	var xScale = d3.scale.ordinal()
+		.domain([1,2,3,4,5,6,7,8,9,10,11,12])
+		.range([(this.props.width-1)/12,
+				(this.props.width-1)*(2/12),
+				(this.props.width-1)*(3/12),
+				(this.props.width-1)*(4/12),
+				(this.props.width-1)*(5/12),
+				(this.props.width-1)*(6/12),
+				(this.props.width-1)*(7/12),
+				(this.props.width-1)*(8/12),
+				(this.props.width-1)*(9/12),
+				(this.props.width-1)*(10/12),
+				(this.props.width-1)*(11/12),
+				(this.props.width-1)]);	
 
 	var xScale2 = d3.time.scale()
 		.nice(d3.time.day)
@@ -112,7 +127,11 @@ componentWillUnmount: function() {
 updateSize: function() {
 	var el3 = ReactDOM.findDOMNode(this);
 	var parentWidth=$(el3).width();
-	Session.set("ulsize", parentWidth);
+	if (parentWidth < 400) {
+		Session.set("ulsize", parentWidth);
+	}else{
+		Session.set("ulsize", 400);
+	}	
 },
 
 
@@ -143,10 +162,26 @@ updateChart(props) {
 	var yScale = d3.scale.linear()
 		.domain([0, trueMax])
 		.range([(props.height-15), 0]);
-
+	/*	
 	var xScale = d3.scale.ordinal()
 		.domain([1,2,3,4,5,6,7,8,9,10,11,12])
 		.range([33,66,99,132,165,198,231,264,297,330,363,396]);	
+	*/
+
+	var xScale = d3.scale.ordinal()
+		.domain([1,2,3,4,5,6,7,8,9,10,11,12])
+		.range([(this.props.width-1)/12,
+				(this.props.width-1)*(2/12),
+				(this.props.width-1)*(3/12),
+				(this.props.width-1)*(4/12),
+				(this.props.width-1)*(5/12),
+				(this.props.width-1)*(6/12),
+				(this.props.width-1)*(7/12),
+				(this.props.width-1)*(8/12),
+				(this.props.width-1)*(9/12),
+				(this.props.width-1)*(10/12),
+				(this.props.width-1)*(11/12),
+				(this.props.width-1)]);
 
     var xScale2 = d3.time.scale()
 		.nice(d3.time.day)

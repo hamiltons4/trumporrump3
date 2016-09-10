@@ -15,6 +15,9 @@ componentWillMount: function() {
 	$(window).on('resize', function(e) {
 		_self.updateSize();
 	});
+	/*$(window).on('resize', function(e) {
+		this.updateChart(this.props);
+	});*/
 },	
 
 componentDidMount: function() {
@@ -73,11 +76,28 @@ componentDidMount: function() {
 	var yScale = d3.scale.linear()
 		.domain([0, trueMax])
 		.range([(this.props.height-15), 0]);
-    
+    /*
 	var xScale = d3.scale.ordinal()
 		.domain([1,2,3,4,5,6,7,8,9,10,11,12])
 		.range([20,40,60,80,100,120,140,160,180,200,220,240]);
-    
+	*/
+	var xScale = d3.scale.ordinal()
+		.domain([1,2,3,4,5,6,7,8,9,10,11,12])
+		.range([(this.props.width-1)/12,
+				(this.props.width-1)*(2/12),
+				(this.props.width-1)*(3/12),
+				(this.props.width-1)*(4/12),
+				(this.props.width-1)*(5/12),
+				(this.props.width-1)*(6/12),
+				(this.props.width-1)*(7/12),
+				(this.props.width-1)*(8/12),
+				(this.props.width-1)*(9/12),
+				(this.props.width-1)*(10/12),
+				(this.props.width-1)*(11/12),
+				(this.props.width-1)]);
+	
+
+
 	var xScale2 = d3.time.scale()
 		.nice(d3.time.day)
 		.domain([start.toDate(), end.toDate()])
@@ -152,6 +172,7 @@ componentDidMount: function() {
 		.attr("class", "yaxis")
 		.call(y_axis);	
 
+	
     svg4.append("path") //was var viz = ...
 		        .attr({
 		            d: line_one(data),
@@ -174,11 +195,13 @@ componentDidMount: function() {
 			
 
 	//this.updateChart(this.props);
+	this.updateSize();
+	this.updateChart(this.props);
 },
 
 componentWillUpdate: function(nextProps) {
-	this.updateSize();
 	this.updateChart(nextProps);
+	//this.updateSize();
 
 },
 
@@ -189,7 +212,11 @@ componentWilUnmount: function() {
 updateSize: function() {
 	var el4 = ReactDOM.findDOMNode(this);
 	var parentWidth=$(el4).width();
-	Session.set("wlsize", parentWidth);
+	if (parentWidth < 250 ) {
+		Session.set("wlsize", parentWidth);
+	}else {
+		Session.set("wlsize", 250);
+	}
 },
 
 getDefaultProps: function() {
@@ -228,9 +255,25 @@ updateChart: function(props) {
 		.domain([0, trueMax])
 		.range([(this.props.height-15), 0]);
     
-	var xScale = d3.scale.ordinal()
+	/*var xScale = d3.scale.ordinal()
 		.domain([1,2,3,4,5,6,7,8,9,10,11,12])
 		.range([20,40,60,80,100,120,140,160,180,200,220,240]);
+	*/	
+    
+    var xScale = d3.scale.ordinal()
+		.domain([1,2,3,4,5,6,7,8,9,10,11,12])
+		.range([(this.props.width-1)/12,
+				(this.props.width-1)*(2/12),
+				(this.props.width-1)*(3/12),
+				(this.props.width-1)*(4/12),
+				(this.props.width-1)*(5/12),
+				(this.props.width-1)*(6/12),
+				(this.props.width-1)*(7/12),
+				(this.props.width-1)*(8/12),
+				(this.props.width-1)*(9/12),
+				(this.props.width-1)*(10/12),
+				(this.props.width-1)*(11/12),
+				(this.props.width-1)]);
     
 	var xScale2 = d3.time.scale()
 		.nice(d3.time.day)
@@ -254,12 +297,12 @@ updateChart: function(props) {
 	
 	
 	var line_one = d3.svg.line()
-		        .x(function(d) {return xScale(d.day);})
+		        .x(function(d) {return xScale(d.day);}) //this was just xScale
 		        .y(function(d) {return yScale(d.rumps*1);})
 		        .interpolate("linear");
    
 	var line_two = d3.svg.line()
-            .x(function(d) {return xScale(d.day);})
+            .x(function(d) {return xScale(d.day);}) //this was just xScale changed because xScale has no width variable
             .y(function(d) {return yScale(d.trumps*1);})
             .interpolate("linear");	        
     
