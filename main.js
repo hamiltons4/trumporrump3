@@ -66,7 +66,7 @@ if (Meteor.isServer) {
 									"rumps": Math.floor(Math.random() * (45 - 1+1)) + 1, 
 									"trumps": Math.floor(Math.random() * (45 - 1+1)) + 1 });
 			}
-		}else if (LineData.find().count() === 12) {
+		}else if ((LineData.find().count() === 12) && (LineData.find({"day": dayvariable}).count() === 0)) { 
 				LineData.insert({"day": (dayvariable),
 									"rumps": 1,
 									"trumps": 1});
@@ -98,13 +98,20 @@ if (Meteor.isServer) {
 		*/
 		if (WLineData.find().count() === 0 ) {
 			for (i= 1; i < 13; ++i) {
-				console.log(i);
+				//console.log(i);
 				WLineData.insert({"day": (dayvariable-12)+i, 
 									"rumps": Math.floor(Math.random() * (45 - 1+1)) + 1, 
 									"trumps": Math.floor(Math.random() * (45 - 1+1)) + 1 });
 			}
-		}
-		/*
+		}else if ((WLineData.find().count() === 12) && (WLineData.find({"day": dayvariable}).count() === 0)) {
+				//console.log("WLineData dayvariable")
+				WLineData.insert({"day": (dayvariable),
+									"rumps": 1,
+									"trumps": 1});
+				WLineData.findAndModify({query :{}, sort:{"_id": 1}, remove:true });
+			}
+		
+		/*s
 		timeObj = JSON.parse(Assets.getText("wlinesamp.json")).daily.forEach(function(doc) {
 			doc.day = new Date(doc.day);
 			//console.log(doc);
