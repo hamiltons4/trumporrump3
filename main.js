@@ -13,6 +13,7 @@ import { WLineData } from './both/collections/tweets.js'
 //import { stream } from 'meteor/mrt:twit'
 import { twit } from 'twit'
 import { moment } from 'meteor/momentjs:moment'
+import { findAndModify } from 'meteor/fongandrew:find-and-modify'
 
 
 
@@ -65,7 +66,13 @@ if (Meteor.isServer) {
 									"rumps": Math.floor(Math.random() * (45 - 1+1)) + 1, 
 									"trumps": Math.floor(Math.random() * (45 - 1+1)) + 1 });
 			}
-		}//else{
+		}else if (LineData.find().count() === 12) {
+				LineData.insert({"day": (dayvariable),
+									"rumps": 1,
+									"trumps": 1});
+				LineData.findAndModify({query :{}, sort:{"_id": 1}, remove:true });
+
+			}
 			//if its not equal to zero, add the next day, and remove the earliest day. we must keep the total however.
 			// alternately, at midnight take the totals and... ultimately it will be all votes
 			// so I want to keep the total from all deleted days and add that to the ongoing twelve day total
