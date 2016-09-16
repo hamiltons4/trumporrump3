@@ -114,9 +114,28 @@ componentDidMount() {
 
 
 	//this.updateChart(this.props);
+	var _usLabel = svg3.selectAll("text.lineLabel");
+
+	if(_usLabel[0].length > 0) {
+		_usLabel
+			.attr("x", this.props.width/2)
+			.attr("y", this.props.height - 50);
+	}else{
+
+	svg3.append("text")
+		.attr("x", this.props.width/2)
+		.attr("y", this.props.height - 50)
+		.classed("lineLabel", true)
+		.attr("text-anchor", "middle")
+		.style("font-weight", "bold")
+		.style("fill", "#3B5998")
+		.text("USA");
+	}
 },
+
 componentWillUpdate(nextProps) {
 	this.updateSize();
+	//this.renderLabels();
 	this.updateChart(nextProps);
 },
 
@@ -142,7 +161,27 @@ getDefaultProps() {
 		data: [] //added this as a test
 	}
 },
+/*
+renderLabels: function() {
+		var _usLabel = svg3.selectAll("text.lineLabel");
 
+		if(_usLabel[0].length > 0) {
+			_usLabel
+				.attr("x", this.props.width/2)
+				.attr("y", this.props.height - 50);
+		}else{
+
+		svg3.append("text")
+			.attr("x", this.props.width/2)
+			.attr("y", this.props.height - 50)
+			.classed("lineLabel", true)
+			.attr("text-anchor", "middle")
+			.style("font-weight", "bold")
+			.style("fill", "blue")
+			.text("USA");
+		}
+	},
+*/
 updateChart(props) {
 	//var data = props.data;
 	var data = props.linedat;
@@ -227,8 +266,45 @@ updateChart(props) {
 		.select(".yaxis")
 		.duration(1000)
 		.call(y_axis);
+	/*	
+	var lineLabel = [
+		{
+			x:
+			y: 
+		}
+	]	
 
-   
+	var usLabel = svg3.selectAll(".usLabel").data(lineLabel);
+	usLabel.enter()
+			.append("text")
+			.attr("class", "lineLabel")
+			.style("font-weight", "bold")
+			.style("fill", "blue")
+			.attr("text-anchor", "middle")
+
+	*/
+	
+	//function renderLabels() {
+	var _usLabel = svg3.selectAll("text.lineLabel");
+
+	if(_usLabel[0].length > 0) {
+		_usLabel
+			.attr("x", this.props.width/2)
+			.attr("y", this.props.height - 50);
+	}else{
+
+	svg3.append("text")
+		.attr("x", this.props.width/2)
+		.attr("y", this.props.height - 50)
+		.classed("lineLabel", true)
+		.attr("text-anchor", "middle")
+		.style("font-weight", "bold")
+		.style("fill", "#3B5998")
+		.text("USA");
+	}
+	//}
+
+   //renderLabels();
 },
 
 

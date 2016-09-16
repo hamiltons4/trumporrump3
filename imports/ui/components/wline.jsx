@@ -190,13 +190,30 @@ componentDidMount: function() {
               "fill": "none",
               "class": "ray2"
           });     	              
-          
+    
+    var _worldLabel = svg4.selectAll("text.lineLabel");
+
+  	if(_worldLabel[0].length > 0) {
+  		_worldLabel
+  			.attr("x", this.props.width/2)
+  			.attr("y", this.props.height - 50);
+  	}else{
+
+  	svg4.append("text")
+		.attr("x", this.props.width/2)
+		.attr("y", this.props.height - 50)
+		.classed("lineLabel", true)
+		.attr("text-anchor", "middle")
+		.style("font-weight", "bold")
+		.style("fill", "#071E3E")
+		.text("WORLD"); 
+	}      
    
 			
 
 	//this.updateChart(this.props);
-	this.updateSize();
-	this.updateChart(this.props);
+	this.updateSize(); //this is instead in componentWill update in uline
+	this.updateChart(this.props); //this is not here in uline
 },
 
 componentWillUpdate: function(nextProps) {
@@ -380,8 +397,25 @@ updateChart: function(props) {
               "class": "ray2"
           });     	              
           
-  */ 
+  */
 
+  	var _worldLabel = svg4.selectAll("text.lineLabel");
+
+  	if(_worldLabel[0].length > 0) {
+  		_worldLabel
+  			.attr("x", this.props.width/2)
+  			.attr("y", this.props.height - 50);
+  	}else{
+
+  	svg4.append("text")
+		.attr("x", this.props.width/2)
+		.attr("y", this.props.height - 50)
+		.classed("lineLabel", true)
+		.attr("text-anchor", "middle")
+		.style("font-weight", "bold")
+		.style("fill", "#071E3E")
+		.text("WORLD"); 
+	}
 },	
 /*
 updateChart2: function(props) {

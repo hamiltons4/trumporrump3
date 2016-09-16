@@ -16,15 +16,10 @@ export const Rumppage = (props) =>
     <h1>Rump.</h1>
     <img className="pagegif img-responsive" id="rumpgif" src={"../../images/RumpTalk4.gif"} alt="rump is a butthead who says unthinking uncaring and dangerous things"/>
     <ul id="rumplist">
-    <li>"I can almost believe that you are of another world," she said, "for otherwise such ignorance were inexplicable.  
-Do you really mean that you do not know that the Sagoths are the creatures of the Mahars&mdash;the mighty Mahars who 
-think they own Pellucidar and all that walks or grows upon its surface, or creeps or burrows beneath, or swims within 
-its lakes and oceans, or flies through its air?  Next you will be telling me that you never before heard of the Mahars!"
-
-I was loath to do it, and further incur her scorn; but there was no alternative if I were to absorb knowledge, 
-so I made a clean breast of my pitiful ignorance as to the mighty Mahars.  She was shocked.  But she did her very best 
-to enlighten me, though much that she said was as Greek would have been to her.  She described the Mahars largely by 
-comparisons.  In this way they were like unto thipdars, in that to the hairless lidi.
+    <li>Would change National Symbology of the United States from Freedom to force and fear. From Lady Liberty to a wall. (It's
+    	not what you say. It's what you do.) From 'Give us your tired your weak..' to 'Nope'. Enjoys cost cutting. Wants Mexicans
+    	to pay for this. Next logical step to melt Lady Liberty down and use the materials elsewhere since she will no longer stand
+    	for anything. Or leave her up, for old times sake, and merely weld a tear under her eye.
 	</li>
     <li>About all I gleaned of them was that they were quite hideous, had wings, and webbed feet; lived in cities built 
 beneath the ground; could swim under water for great distances, and were very, very wise.  The Sagoths were their weapons

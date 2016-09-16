@@ -146,7 +146,7 @@ Ubar = React.createClass({
 				.text(function(d, i) {
 					return d.qty;
 				});
-
+		/*		
 		var xLabel = svg1.selectAll(".xLabel").data(data);
 		xLabel.enter()
 			  .append('text')
@@ -163,6 +163,7 @@ Ubar = React.createClass({
 			 	.attr('y', function(d, i) {
 			 		return props.height - 5;
 			 	});	  			
+		*/	 	
     },
 
 	render() {
