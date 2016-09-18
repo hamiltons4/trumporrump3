@@ -68,11 +68,24 @@ componentDidMount() {
 					.scale(yScale)
 					.orient("right")
 					.ticks(3);
-
+	/*
 	var x_axis = d3.svg.axis()
 					.scale(xScale2)
 					.orient("bottom")
 					.ticks(6);													
+	*/
+
+	if(this.props.width < 294) {
+		var x_axis = d3.svg.axis()
+					.scale(xScale2)
+					.orient("bottom")
+					.ticks(3);
+	}else{
+		var x_axis = d3.svg.axis()
+					.scale(xScale2)
+					.orient("bottom")
+					.ticks(6);
+	}
 
 	var line_one = d3.svg.line()
 		        .x(function(d) {return xScale(d.day);})
@@ -128,9 +141,10 @@ componentDidMount() {
 		.classed("lineLabel", true)
 		.attr("text-anchor", "middle")
 		.style("font-weight", "bold")
-		.style("fill", "#3B5998")
+		.style("fill", "MidnightBlue")
 		.text("USA");
 	}
+
 },
 
 componentWillUpdate(nextProps) {
@@ -231,12 +245,25 @@ updateChart(props) {
 					.scale(yScale)
 					.orient("right")
 					.ticks(3);	
-
+	/*
 	var x_axis = d3.svg.axis()
 					.scale(xScale2)
 					.orient("bottom")
 					.ticks(6);					
-	
+	*/
+
+	if(this.props.width < 294) {
+		var x_axis = d3.svg.axis()
+					.scale(xScale2)
+					.orient("bottom")
+					.ticks(3);
+	}else{
+		var x_axis = d3.svg.axis()
+					.scale(xScale2)
+					.orient("bottom")
+					.ticks(6);
+	}
+
      var line_one = d3.svg.line()
 		        .x(function(d) {return xScale(d.day);})
 		        .y(function(d) {return yScale(d.rumps*1);})
@@ -299,11 +326,11 @@ updateChart(props) {
 		.classed("lineLabel", true)
 		.attr("text-anchor", "middle")
 		.style("font-weight", "bold")
-		.style("fill", "#3B5998")
+		.style("fill", "MidnightBlue")
 		.text("USA");
 	}
 	//}
-
+	
    //renderLabels();
 },
 

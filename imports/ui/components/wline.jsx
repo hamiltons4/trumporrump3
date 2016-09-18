@@ -38,6 +38,7 @@ componentDidMount: function() {
 	    console.log(moment().dayOfYear() + "Day of year");
 	    console.log(dateString);
 	    var parseDate = d3.time.format("%a %b %d %Y");
+	    //var labelColor = "#071E3E";
 	    dTest = parseDate(dateString);
 	    dTest = new Date(dTest);
 	    console.log(dTest);
@@ -113,12 +114,24 @@ componentDidMount: function() {
     				.scale(yScale)
     				.orient("right")
     				.ticks(3);
-
+    /*				
 	var x_axis = d3.svg.axis()
 					.scale(xScale2)
 					.orient("bottom")
 					.ticks(6);   				
+	*/
 
+	if(this.props.width < 182) {
+		var x_axis = d3.svg.axis()
+					.scale(xScale2)
+					.orient("bottom")
+					.ticks(3);
+	}else{
+		var x_axis = d3.svg.axis()
+					.scale(xScale2)
+					.orient("bottom")
+					.ticks(6);
+	}
 	
 	
 	var line_one = d3.svg.line()
@@ -205,18 +218,19 @@ componentDidMount: function() {
 		.classed("lineLabel", true)
 		.attr("text-anchor", "middle")
 		.style("font-weight", "bold")
-		.style("fill", "#071E3E")
+		.style("fill", "MidnightBlue")
 		.text("WORLD"); 
 	}      
    
 			
 
 	//this.updateChart(this.props);
-	this.updateSize(); //this is instead in componentWill update in uline
-	this.updateChart(this.props); //this is not here in uline
+	//this.updateSize(); //this is instead in componentWill update in uline
+	//this.updateChart(this.props); //this is not here in uline
 },
 
 componentWillUpdate: function(nextProps) {
+	this.updateSize();
 	this.updateChart(nextProps);
 	//this.updateSize();
 
@@ -250,6 +264,7 @@ updateChart: function(props) {
 	var data = props.linedat;
 	var end = moment().utc().startOf('day');
 	var start = moment.utc(end).subtract(12, 'days');
+	//var labelColor = "#071E3E";
 	
     //console.log(data);
    
@@ -305,12 +320,23 @@ updateChart: function(props) {
     				.scale(yScale)
     				.orient("right")
     				.ticks(3);
-
+    /*				
 	var x_axis = d3.svg.axis()
 					.scale(xScale2)
 					.orient("bottom")
 					.ticks(6);   				
-
+	*/
+	if(this.props.width < 182) {
+		var x_axis = d3.svg.axis()
+					.scale(xScale2)
+					.orient("bottom")
+					.ticks(3);
+	}else{
+		var x_axis = d3.svg.axis()
+					.scale(xScale2)
+					.orient("bottom")
+					.ticks(6);
+	}
 	
 	
 	var line_one = d3.svg.line()
@@ -413,7 +439,7 @@ updateChart: function(props) {
 		.classed("lineLabel", true)
 		.attr("text-anchor", "middle")
 		.style("font-weight", "bold")
-		.style("fill", "#071E3E")
+		.style("fill", "MidnightBlue")
 		.text("WORLD"); 
 	}
 },	

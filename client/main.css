@@ -443,6 +443,10 @@ navbar {
 	font-family: sans-serif;
 	font-size: 8px;
 }
+
+.lineLabel {
+	color: #071E3E;
+}
 /*==================================================================== */
 .foot {
 	background: #071E3E;
