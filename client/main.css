@@ -107,6 +107,7 @@ navbar {
 .container {
 	width: 100%;
 	border-bottom: solid 4px;
+	border-bottom-color: whitesmoke; /* this is the one under the nav I beleive */
 	padding:0;
 	margin:0;
 	background-color: #071E3E;
@@ -163,10 +164,18 @@ navbar {
 	border: none;
 }
 
+#trumpbar h3 {
+	margin-top: 20px;
+}
+
 #rumpbar {
 	margin: 0;
 	padding: 0;
 	border: none;
+}
+
+#rumpbar h3 {
+	margin-top: 20px;
 }
 
 .col-md-6 {
@@ -443,10 +452,21 @@ navbar {
 	font-family: sans-serif;
 	font-size: 8px;
 }
-
-.lineLabel {
-	color: #071E3E;
+/*============================== tooltip ====================================*/
+.utooltip {   
+  position: absolute;           
+  text-align: center;           
+  width: 60px;                  
+  height: 28px;                 
+  padding: 2px;             
+  font: 12px sans-serif;        
+  background: lightsteelblue;   
+  border: 0px;      
+  border-radius: 8px;           
+  pointer-events: none;         
 }
+
+
 /*==================================================================== */
 .foot {
 	background: #071E3E;

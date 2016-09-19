@@ -125,7 +125,20 @@ componentDidMount() {
               "class": "ray4"             
           }); 
 
+    var tooltip = d3.select('.line1')
+					.append('div')
+					.attr('class', 'utooltip')
+					.style('position', 'absolute')
+					.style('z-index', '10')
+					.style('visibility', 'visible')
+					.append('text')
+					.text("Hello!");      
+					/*
+    d3.select('.ray3')
+    	.on("mouseover", function(){return tooltip.style("visibility", "visible");})
+    	.on("mouseout", function() {return tooltip.style("visibility", "hidden");});      
 
+	*/
 	//this.updateChart(this.props);
 	var _usLabel = svg3.selectAll("text.lineLabel");
 
@@ -144,6 +157,16 @@ componentDidMount() {
 		.style("fill", "MidnightBlue")
 		.text("USA");
 	}
+	/*
+	var tooltip = d3.select('.line1')
+					.append('div')
+					.attr('class', 'utooltip')
+					.style('position', 'absolute')
+					.style('z-index', '10')
+					.style('visibility', 'hidden')
+					.text("Hello!");
+	*/
+	
 
 },
 
@@ -330,7 +353,16 @@ updateChart(props) {
 		.text("USA");
 	}
 	//}
-	
+
+	var tooltip = d3.select('.line1')
+					.append('div')
+					.attr('class', 'utooltip')
+					.style('position', 'absolute')
+					.style('z-index', '10')
+					.style('visibility', 'visible')
+					.append('text')
+					.text("Hello!");      
+
    //renderLabels();
 },
 

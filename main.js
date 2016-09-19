@@ -162,7 +162,7 @@ if (Meteor.isServer) {
 
 			
 		*/
-		     T.get('search/tweets', {q: 'trump%3A%29; since:2016-09-07 until:2016-09-14', count: 100}, Meteor.bindEnvironment(function(err, data, response) {
+		     T.get('search/tweets', {q: 'trump%3A%29; since:2016-09-08 until:2016-09-15', count: 100}, Meteor.bindEnvironment(function(err, data, response) {
 		   // T.get('search/tweets', {q: 'chicken since:2016-04-11 until:2016-04-12', count: 100}, Meteor.bindEnvironment(function(err, data, response) {
 			//console.log(data);
 			//var g = "";
@@ -209,8 +209,8 @@ if (Meteor.isServer) {
 	        //console.log(like);
 	        searchstring = 'pizza &#58;&#40; since:2016-04-01 until:2016-04-03'; //this uses the html entity (hex char) for the emoticon mood search in twitter
 	        searchstring2 = 'pizza%3A%28 since:2016-04-01 until:2016-04-03';
-	        searchstring3 = 'trum%3A%28 since:2016-09-07'; //Keeping this within the twitter search date limits prevents 'can't read  created_at of undefined' error.
-	        searchstring4 = 'until:2016-09-14';
+	        searchstring3 = 'trum%3A%28 since:2016-09-08'; //Keeping this within the twitter search date limits prevents 'can't read  created_at of undefined' error.
+	        searchstring4 = 'until:2016-09-15';
 	        T.get('search/tweets', {q: searchstring3 + searchstring4, count: 100}, Meteor.bindEnvironment(
 	        	function(err, data, response) {
 
