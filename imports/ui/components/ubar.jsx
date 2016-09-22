@@ -144,7 +144,7 @@ Ubar = React.createClass({
 					return props.height - yScale(d.qty) - 2;
 				})
 				.text(function(d, i) {
-					return d.qty;
+					return d3.format("s")(d.qty);
 				});
 		/*		
 		var xLabel = svg1.selectAll(".xLabel").data(data);

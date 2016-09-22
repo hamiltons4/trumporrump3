@@ -122,8 +122,8 @@ componentDidMount() {
 				<img className="mainimg"  id="rumpmainimg" src={"../../images/RumpM.png"} alt="Rump"/>*/}
 				{/*<img className={startComputation()} id="trumpmainimg" src={"../../images/TrumpM.png"} alt="Trump"/>
 				<img className={startComputation()} id="rumpmainimg" src={"../../images/RumpM.png"} alt="Rump"/>*/}
-				<img className={this.props.animclass} id={"trumpmainimg"+this.props.votewinner} src={"../../images/TrumpM.png"} alt="Trump"/>
-				<img className={this.props.animclass} id={"rumpmainimg"+this.props.votewinner} src={"../../images/RumpM.png"} alt="Rump"/>
+				<img className={this.props.animclass} id={"trumpmainimg"+this.props.votewinner} src={"../../images/TrumpM2.png"} alt="Trump"/>
+				<img className={this.props.animclass} id={"rumpmainimg"+this.props.votewinner} src={"../../images/RumpM2.png"} alt="Rump"/>
 				{/*<img className={Session.get("sesanimclass")} id="trumpmainimg" src={"../../images/TrumpM.png"} alt="Trump"/>
 				<img className={Session.get("sesanimclass")} id="rumpmainimg" src={"../../images/RumpM.png"} alt="Rump"/>*/}
 				

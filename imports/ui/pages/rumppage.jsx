@@ -14,35 +14,21 @@ export const Rumppage = (props) =>
 <div className="container-fluid" id="theR">
 <div className="container-fluid secondary">
     <h1>Rump.</h1>
-    <img className="pagegif img-responsive" id="rumpgif" src={"../../images/RumpTalk4.gif"} alt="rump is a butthead who says unthinking uncaring and dangerous things"/>
+    <img className="pagegif img-responsive" id="rumpgif" src={"../../images/RumpTalk5.gif"} alt="rump is a butthead who says unthinking uncaring and dangerous things"/>
     <ul id="rumplist">
-    <li>Would change National Symbology of the United States from Freedom to force and fear. From Lady Liberty to a wall. (It's
-    	not what you say. It's what you do.) From 'Give us your tired your weak..' to 'Nope'. Enjoys cost cutting. Wants Mexicans
-    	to pay for this. Next logical step to melt Lady Liberty down and use the materials elsewhere since she will no longer stand
-    	for anything. Or leave her up, for old times sake, and merely weld a tear under her eye.
+    <li>Would change the symbolic meaning of the United States from courage, love, and openness to 
+    	smallness and fear. From Lady Liberty to a wall.
 	</li>
-    <li>About all I gleaned of them was that they were quite hideous, had wings, and webbed feet; lived in cities built 
-beneath the ground; could swim under water for great distances, and were very, very wise.  The Sagoths were their weapons
- of offense and defense, and the races like herself were their hands and feet&mdash;they were the slaves and servants 
- who did all the manual labor.  The Mahars were the heads&mdash;the brains&mdash;of the inner world.  I longed to see this
-  wondrous race of supermen.
-  Perry learned the language with me.  When we halted, as we occasionally did, though sometimes the halts seemed ages apart,
- he would join in the conversation, as would Ghak the Hairy One, he who was chained just ahead of Dian the Beautiful.  Ahead
- f Ghak was Hooja the Sly One.  He too entered the conversation occasionally.  Most of his remarks were directed toward Dian
- the Beautiful.  It didn't take half an eye to see that he had developed a bad case; but the girl appeared totally oblivious
- to his thinly veiled advances.  Did I say thinly veiled? There is a race of men in New Zealand, or Australia, I have 
- forgotten which, who indicate their preference for the lady of their affections by banging her over the head with a bludgeon.
-   By comparison with this method Hooja's lovemaking might be called thinly veiled.  At first it caused me to blush violently 
-   although I have seen several Old Years out at Rectors, and in other less fashionable places off Broadway, and in Vienna, 
-   and Hamburg
-  </li>
-  <li>But the girl!  She was magnificent.  It was easy to see that she considered herself as entirely above and apart from her
-present surroundings and company.  She talked with me, and with Perry, and with the taciturn Ghak because we were respectful;
- but she couldn't even see Hooja the Sly One, much less hear him, and that made him furious.  He tried to get one of the 
- Sagoths to move the girl up ahead of him in the slave gang, but the fellow only poked him with his spear and told him that 
- e had selected the girl for his own property&mdash;that he would buy her from the Mahars as soon as they reached Phutra.  
- Phutra, it seemed, was the city of our destination.
-  </li>
+    <li>May not be a racist himself, but certainly encourages them.
+  	</li>
+  	<li>Disrespects and discounts women, seems to judge first by appearances.
+  	</li>
+  	<li>Uses National stage as arena for dealing with own self esteem issues such as little or big 'hands'.
+  	
+  	</li>
+  	<li>Appears to believe that the attention getting tactics of reality television are appropriate for dealing
+  	with international negotiations in which lives and nuclear weapons may be involved.</li>
+  	<li>Rash.</li>
     </ul>
 {/*    <p>Again she looked her incredulity.</p>
 
