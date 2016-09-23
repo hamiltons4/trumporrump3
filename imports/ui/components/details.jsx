@@ -18,7 +18,7 @@ export default class Details extends Component {
 			 </h4>
 			 <h4>If you need some coding done</h4>
 			   
-				<div><button className="btn btn-primary" id="contact" type="submit"><a href="#">Contact Me</a></button></div>				
+				<div id="aboutcontact"><button className="btn btn-primary" id="contact" type="submit"><a href="#">Contact Me</a></button></div>				
 			</div>
 		)
 	}

@@ -7,7 +7,7 @@ export default class Gps extends Component {
 	render() {
 		return (
 			<div className="gps">
-			   	<span>Having a hard time choosing? Use</span>
+			   	<h2><span className="label">Having a hard time choosing? Use</span></h2>
 				<div><button className="btn btn-primary" id="innergps" type="submit"><a href="#">Your Inner GPS</a></button></div>		
 			</div>
 		)

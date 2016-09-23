@@ -9,7 +9,7 @@ export default class Principles extends Component {
 			<div className="princip">
 			   	<h2><span className="label">Election stressing you out? Try</span></h2>
 				<div><button className="btn btn-primary" id="yoga" type="submit"><a href="#">Mind Yoga</a></button></div>
-				<div><h2><span className="label">Or</span></h2></div>
+				<div><h2 id="orprinciples"><span className="label" >Or</span></h2></div>
 				<div><button className="btn btn-primary" id="alchemy" type="submit"><a href="#">Alchemy</a></button></div>
 			</div>
 		)

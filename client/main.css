@@ -650,6 +650,11 @@ navbar {
 	margin-left: 0;
 	margin-right: 0;
 	margin-top:0;
+	color: #ecebe6;
+}
+
+#theA a {
+	color: #fff;
 }
 
 .pagevote {
@@ -673,6 +678,11 @@ navbar {
 
 }
 
+#orprinciples {
+	margin-top: 0;
+	margin-bottom: 27px;
+}
+
 .princip div {
 	float: left;
 	width: 33%;
@@ -688,6 +698,15 @@ navbar {
 	margin: 0 auto;
 
 }
+
+#innergps {
+	margin-bottom: 15px;
+}
+
+#aboutcontact {
+	margin-bottom: 15px;
+}
+
 
 .secondary {
 	/*position: fixed;*/
