@@ -67,7 +67,8 @@ componentDidMount() {
 	var y_axis = d3.svg.axis()
 					.scale(yScale)
 					.orient("right")
-					.ticks(3);
+					.ticks(3)
+					.tickFormat(d3.format("s"));
 	/*
 	var x_axis = d3.svg.axis()
 					.scale(xScale2)
@@ -267,7 +268,8 @@ updateChart(props) {
 	var y_axis = d3.svg.axis()
 					.scale(yScale)
 					.orient("right")
-					.ticks(3);	
+					.ticks(3)
+					.tickFormat(d3.format("s"));	
 	/*
 	var x_axis = d3.svg.axis()
 					.scale(xScale2)
