@@ -14,8 +14,8 @@ export default class Vote extends Component {
 			//userloc = UserLocation.get();
 			Meteor.call('UserLocation/get', function(err, res) {
 				if(res) {console.log(res);
-				councode = res.country_code;
-				//councode = "SP";
+				//councode = res.country_code;
+				councode = "SP";
 				console.log(councode);
 				}	
 			});
@@ -47,10 +47,12 @@ export default class Vote extends Component {
 				console.log("Trump pressed");
 				Meteor.call("increTrumps", vote, moment().dayOfYear(), function(e, r) {
 					if (e) alert(e.reason)
+					Session.set("oldT", r);	//this is a pattern to use session variables initiated on the server
 				});
 			}else {
 				Meteor.call("WIncreTrumps", vote, moment().dayOfYear(), function(e, r) {
 					if (e) alert(e.reason)
+					Session.set("oldWT", r);	
 				});
 			}
 			/*Meteor.call("increTrumps", vote, moment().dayOfYear(), function(e, r) {
@@ -63,8 +65,8 @@ export default class Vote extends Component {
 			//e.preventDefault();
 			Meteor.call('UserLocation/get', function(err, res) {
 				if(res) {console.log(res);
-				councodeR = res.country_code;
-				//councodeR = "SP";
+				//councodeR = res.country_code;
+				councodeR = "SP";
 				console.log(councodeR);
 
 				}	
@@ -80,10 +82,12 @@ export default class Vote extends Component {
 			console.log("Rump pressed");	
 			Meteor.call("increRumps", vote, moment().dayOfYear(), function(e,r) {
 				if (e) alert(e.reason)
+				Session.set("oldR", r); //this is a pattern to use session variables initiated on the server	
 			});
 			} else {
 				Meteor.call("WIncreRumps", vote, moment().dayOfYear(), function(e, r) {
 					if (e) alert(e.reason)
+					Session.set("oldWR", r);	
 				});
 			}
 		}

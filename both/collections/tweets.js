@@ -108,12 +108,15 @@ Meteor.methods({
 									"rumps": 0,
 									"trumps": 0});  //this creates a new day at midnight
 			oldTValue = LineData.findOne().trumps;  //this stores the old value
+			//Session.set("oldT", "oldTValue"); //only on the client, use methods
 			console.log(oldTValue);
 			LineData.remove({"day": (date-11)}); // this removes the oldest day and keeps the # days at 12 for d3
 
 		}
+		LineData.update({day: date}, {$inc: {trumps: vote}}, {upsert: true});
 
-		return LineData.update({day: date}, {$inc: {trumps: vote}}, {upsert: true}); 
+		//return LineData.update({day: date}, {$inc: {trumps: vote}}, {upsert: true}); 
+		return oldTValue;
 	},	
 
 	increRumps:function(vote, date) {
@@ -135,12 +138,14 @@ Meteor.methods({
 			//console.log(LineData.findOne());
 			oldRValue = LineData.findOne().rumps;
 			console.log(oldRValue);
+			//Session.set("oldR", "oldRValue");
 			//LineData.findAndModify({query :{}, sort:{"_id": 1}, remove:true });
 			LineData.remove({ "day": (date - 11)});
 		}
-		
+		LineData.update({day: date}, {$inc: {rumps: vote}}, {upsert: true});
 
-		return LineData.update({day: date}, {$inc: {rumps: vote}}, {upsert: true});
+		//return LineData.update({day: date}, {$inc: {rumps: vote}}, {upsert: true});
+		return oldRValue;
 	},	
 	
 	WIncreTrumps:function(vote, date) {
@@ -161,14 +166,16 @@ Meteor.methods({
 									"trumps": 0});
 			oldWTValue = WLineData.findOne().trumps;
 			console.log(oldWTValue);
+			//Session.set("oldWT", "oldWTValue");
 			WLineData.remove({"day": (date-11)});
 
 		}
 		//console.log("increRumps if check");
-		
+		WLineData.update({day: date}, {$inc: {trumps: vote}}, {upsert: true}); 	
 		
 
-		return WLineData.update({day: date}, {$inc: {trumps: vote}}, {upsert: true}); 
+		//return WLineData.update({day: date}, {$inc: {trumps: vote}}, {upsert: true}); 
+		return oldWTValue;
 	},
 
 	WIncreRumps:function(vote, date) {
@@ -189,11 +196,14 @@ Meteor.methods({
 									"trumps": 0});
 			oldWRValue = WLineData.findOne().rumps;
 			console.log(oldWRValue);
+			//Session.set("oldWR", "oldWRValue"); //only on the client, will pass with methods
 			WLineData.remove({"day": (date-11)});
 		}
-		
 
-		return WLineData.update({day: date}, {$inc: {rumps: vote}}, {upsert: true});
+		WLineData.update({day: date}, {$inc: {rumps: vote}}, {upsert: true});
+
+		//return WLineData.update({day: date}, {$inc: {rumps: vote}}, {upsert: true});
+		return oldWRValue;
 	}			
 
 	})

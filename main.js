@@ -25,6 +25,10 @@ if (Meteor.isClient) {
 	Meteor.subscribe('tweets3');
 	Meteor.subscribe('tweets4');
 
+	Session.setDefault("oldT", 0);
+	Session.setDefault("oldR", 0);
+	Session.setDefault("oldWT", 0);
+	Session.setDefault("oldWR", 0);
    /*
 	Meteor.startup(function () {
 		

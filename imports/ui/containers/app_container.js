@@ -64,11 +64,15 @@ export default createContainer(() => {
 			//console.log("totalR =" + rumps);
 		};
 
-	/*trumps = trumps + previousTrumps;
-	rumps = rumps + previousRumps;
-	wtrumps = wtrumps + previousWtrumps;
-	wrumps = wrumps + previousrwrumps;
-	*/	
+	trumps = trumps + Session.get("oldT");
+	rumps = rumps + Session.get("oldR");
+	wtrumps = wtrumps + Session.get("oldWT");
+	wrumps = wrumps + Session.get("oldWR");
+	Session.set("oldT", 0);
+	Session.set("oldR", 0);
+	Session.set("oldWT", 0);
+	Session.set("oldWR", 0);
+	
 		
 
 	if (trumps+wtrumps > rumps+wrumps) {
