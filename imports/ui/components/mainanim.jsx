@@ -31,6 +31,7 @@ Mainanim = React.createClass({
 },	
 */
 
+
 componentDidMount() {	
 	//console.log("votewinner = ");
 	//console.log(this.props.votewinner);
@@ -69,7 +70,47 @@ componentDidMount() {
 
 		}); 
 	*/
-},	
+},
+
+componentWillReceiveProps(nextProps) {
+	/*if (this.props.votewinner == 1) {
+		winner = "Rump.";
+		//Session.set("wordvar", "Rump.");
+	}else{
+		winner = "Trump!";
+		//Session.set("wordvar", "Trump.");
+	}*/
+	switch(this.props.votewinner) {
+		case 0:
+			winner = "Trump!";
+			break;
+		case 1:
+			winner = "Rump.";
+			break;	
+	}
+},
+
+
+
+componentWillUpdate(nextProps) {
+	/*if (this.props.votewinner == 1) {
+		winner = "Rump.";
+		Session.set("wordvar", "Rump.");
+	}else{
+		winner = "Trump!";
+		Session.set("wordvar", "Trump!");
+	}*/
+	switch(this.props.votewinner) {
+		case 0:
+			winner = "Trump!";
+			break;
+		case 1:
+			winner = "Rump.";
+			break;	
+	}
+
+},
+
 
 	
 	render() {
@@ -115,7 +156,8 @@ componentDidMount() {
 		return (
 			<div>
 				<h3 className="animtext">Today {today}</h3>
-				<h4>{winner}</h4>
+				<h3 className="animtext2">{this.props.votewinnerword}</h3>
+				{/*<h3 className="animtext2">{Session.get("wordvar")}</h3>*/}
 				{/*<img className="mainimg shake-little shake-constant" id="trumpmainimg" src={"../../images/TrumpM.png"} alt="Trump"/>
 				<img className="mainimg shake-little shake-constant" id="rumpmainimg" src={"../../images/RumpM.png"} alt="Rump"/>*/}
 				{/*<img className="mainimg" id="trumpmainimg" src={"../../images/TrumpM.png"} alt="Trump"/>

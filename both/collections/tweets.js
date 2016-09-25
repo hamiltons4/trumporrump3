@@ -92,34 +92,79 @@ if (Meteor.isServer) {
 Meteor.methods({
 
 	increTrumps:function(vote, date) {
+		var oldTValue = 0;
 		vote = parseInt(vote); // this gives the ability to weight the vote..
 
 
 		check(vote, Number);
 		check(date, Number); //this was Number when it was isoWeekday
 		
-		
+		if (LineData.find({"day": date}).count() === 0) {
+			//I want to remove the oldest day and get its' value and put it
+			//into previousTrumps
+			//console.log(LineData.findOne({},{day: 1}));
+			console.log("increTRumps if check");
+			LineData.insert({"day": date,
+									"rumps": 0,
+									"trumps": 0});  //this creates a new day at midnight
+			oldTValue = LineData.findOne().trumps;  //this stores the old value
+			console.log(oldTValue);
+			LineData.remove({"day": (date-11)}); // this removes the oldest day and keeps the # days at 12 for d3
+
+		}
 
 		return LineData.update({day: date}, {$inc: {trumps: vote}}, {upsert: true}); 
 	},	
 
 	increRumps:function(vote, date) {
+		var oldRValue = 0;
 		vote = parseInt(vote);
 
 
 		check(vote, Number);
 		check(date, Number); // this was Number when it was isoWeekday
+
+		if (LineData.find({"day": date}).count() === 0) {
+			//I want to remove the oldest day and get its' value and put it
+			//into previousTrumps
+			//console.log(LineData.findOne({},{day: 1}));
+			console.log("increRumps if check");
+			LineData.insert({"day": date,
+									"rumps": 0,
+									"trumps": 0});
+			//console.log(LineData.findOne());
+			oldRValue = LineData.findOne().rumps;
+			console.log(oldRValue);
+			//LineData.findAndModify({query :{}, sort:{"_id": 1}, remove:true });
+			LineData.remove({ "day": (date - 11)});
+		}
 		
 
 		return LineData.update({day: date}, {$inc: {rumps: vote}}, {upsert: true});
 	},	
 	
 	WIncreTrumps:function(vote, date) {
+		var oldWTValue = 0;
 		vote = parseInt(vote); // this gives the ability to weight the vote..
 
 
 		check(vote, Number);
 		check(date, Number); //this was Number when it was isoWeekday
+
+		if (WLineData.find({"day": date}).count() === 0) {
+			//I want to remove the oldest day and get its' value and put it
+			//into previousTrumps
+			//console.log(WLineData.findOne({},{day: 1}));
+			console.log("increWTRumps if check");
+			WLineData.insert({"day": date,
+									"rumps": 0,
+									"trumps": 0});
+			oldWTValue = WLineData.findOne().trumps;
+			console.log(oldWTValue);
+			WLineData.remove({"day": (date-11)});
+
+		}
+		//console.log("increRumps if check");
 		
 		
 
@@ -127,11 +172,25 @@ Meteor.methods({
 	},
 
 	WIncreRumps:function(vote, date) {
+		var oldWRValue = 0;
 		vote = parseInt(vote);
 
 
 		check(vote, Number);
 		check(date, Number); // this was Number when it was isoWeekday
+
+		if (WLineData.find({"day": date}).count() === 0) {
+			//I want to remove the oldest day and get its' value and put it
+			//into previousTrumps
+			//console.log(LineData.findOne({},{day: 1}));
+			console.log("increWRumps if check");
+			WLineData.insert({"day": date,
+									"rumps": 0,
+									"trumps": 0});
+			oldWRValue = WLineData.findOne().rumps;
+			console.log(oldWRValue);
+			WLineData.remove({"day": (date-11)});
+		}
 		
 
 		return WLineData.update({day: date}, {$inc: {rumps: vote}}, {upsert: true});

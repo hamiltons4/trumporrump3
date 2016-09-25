@@ -15,6 +15,7 @@ var wrumps = 0;
 var bardat = [];
 var wbardat = [];
 var votewinner = 0; // votewinner is 0 if trump and 1 if rump
+var votewinnerword = "";
 
 //var animclass = "";
 //var animclass1 = "";
@@ -63,11 +64,19 @@ export default createContainer(() => {
 			//console.log("totalR =" + rumps);
 		};
 
+	/*trumps = trumps + previousTrumps;
+	rumps = rumps + previousRumps;
+	wtrumps = wtrumps + previousWtrumps;
+	wrumps = wrumps + previousrwrumps;
+	*/	
+		
+
 	if (trumps+wtrumps > rumps+wrumps) {
 		console.log("Trump wins!");
 		//trumpWin = 1;
 		//rumpWin = 0;
 		votewinner = 0;
+		votewinnerword = "Trump!";
 
 		//console.log(trumpWin, rumpWin);
 	}else{
@@ -75,6 +84,7 @@ export default createContainer(() => {
 		//trumpWin = 0;
 		//rumpWin = 1;
 		votewinner = 1;
+		votewinnerword = "Rump.";
 		//console.log(trumpWin, rumpWin);
 
 	}
@@ -132,6 +142,7 @@ export default createContainer(() => {
 		wbardat: [{qty: wtrumps, xlabel: "USATrumps"},
 				   {qty: wrumps, xlabel: "USARumps"}],
 		votewinner: votewinner,	
+		votewinnerword: votewinnerword,
 		animclass: animclass,
 		ubsizer: ubsizer,
 		wbsizer: wbsizer,

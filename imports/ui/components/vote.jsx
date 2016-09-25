@@ -5,8 +5,8 @@ import { moment } from 'meteor/momentjs:moment'
 import { flowkey } from 'meteor/flowkey:user-location'
 
 //var userloc = {};
-var councode = "";
-var councodeR = "";
+var councode = "US"; //flowkey doesn't always work default to us.
+var councodeR = "US";// I could also if us or ""
 
 export default class Vote extends Component {
 		handleTSubmit(e) {
@@ -14,8 +14,8 @@ export default class Vote extends Component {
 			//userloc = UserLocation.get();
 			Meteor.call('UserLocation/get', function(err, res) {
 				if(res) {console.log(res);
-				//councode = res.country_code;
-				councodeR = "SP";
+				councode = res.country_code;
+				//councode = "SP";
 				console.log(councode);
 				}	
 			});
@@ -63,8 +63,8 @@ export default class Vote extends Component {
 			//e.preventDefault();
 			Meteor.call('UserLocation/get', function(err, res) {
 				if(res) {console.log(res);
-				//councodeR = res.country_code;
-				councodeR = "SP";
+				councodeR = res.country_code;
+				//councodeR = "SP";
 				console.log(councodeR);
 
 				}	

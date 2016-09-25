@@ -232,6 +232,11 @@ navbar {
 }
 */
 
+.animtext2 {
+	color: #C42939;
+	margin-top: 15px;
+}
+
 #trumpmainimg1 {
 	/* Trump loses, to the left and smaller */
 	animation: notawintrump ease 4s;

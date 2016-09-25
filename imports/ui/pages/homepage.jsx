@@ -42,7 +42,7 @@ export const Homepage = (props) =>
 				<div className="col-md-6 col-md-push-3" id="display">
 					<div className="anim striped">
 						<p></p>
-						<Mainanim votewinner={props.votewinner} animclass={props.animclass}/>
+						<Mainanim votewinner={props.votewinner} votewinnerword={props.votewinnerword} animclass={props.animclass}/>
 						{/*<img className="mainimg" src={"../../images/TrumpM.png"} alt="Trump"/>
 						<img className="mainimg" src={"../../images/RumpM.png"} alt="Rump"/>*/}
 					</div>
