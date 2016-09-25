@@ -16,7 +16,7 @@ export const Rumppage = (props) =>
     <h1>Rump.</h1>
     <img className="pagegif img-responsive" id="rumpgif" src={"../../images/RumpTalk5.gif"} alt="rump is a butthead who says unthinking uncaring and dangerous things"/>
     <ul id="rumplist">
-    <li>Would change the symbolic meaning of the United States from courage, love, and openness to 
+    <li>Would change the symbolic meaning of the United States from Courage, Love, and Openness to 
     	smallness and fear. From Lady Liberty to a wall.
 	</li>
     <li>May not be a racist himself, but certainly encourages them.
@@ -28,7 +28,7 @@ export const Rumppage = (props) =>
   	</li>
   	<li>Appears to believe that the attention getting tactics of reality television are appropriate for dealing
   	with international negotiations in which lives and nuclear weapons may be involved.</li>
-  	<li>Rash.</li>
+  	<li>Rash. Perhaps foolish.</li>
     </ul>
 {/*    <p>Again she looked her incredulity.</p>
 

@@ -156,7 +156,7 @@ componentWillUpdate(nextProps) {
 		return (
 			<div>
 				<h3 className="animtext">Today {today}</h3>
-				<h3 className="animtext2">{this.props.votewinnerword}</h3>
+				<h3 className={"animtext2" + this.props.votewinner}>{this.props.votewinnerword}</h3>
 				{/*<h3 className="animtext2">{Session.get("wordvar")}</h3>*/}
 				{/*<img className="mainimg shake-little shake-constant" id="trumpmainimg" src={"../../images/TrumpM.png"} alt="Trump"/>
 				<img className="mainimg shake-little shake-constant" id="rumpmainimg" src={"../../images/RumpM.png"} alt="Rump"/>*/}

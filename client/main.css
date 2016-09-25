@@ -232,8 +232,13 @@ navbar {
 }
 */
 
-.animtext2 {
+.animtext20 {
 	color: #C42939;
+	margin-top: 15px;
+}
+
+.animtext21 {
+	color: #082D62;
 	margin-top: 15px;
 }
 
@@ -439,6 +444,7 @@ navbar {
 .xaxis path,
 .xaxis line {
 	fill: none;
+	display: none;
 	stroke: grey;
 	stroke-width: 1;
 	shape-rendering: crispEdges;
