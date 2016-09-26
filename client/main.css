@@ -686,11 +686,14 @@ navbar {
 	background: dodgerblue;
 	overflow: auto;
 	margin: 0 auto;
+	/*margin-bottom: 10px;*/
+	padding-bottom: 25px;
+
 
 }
 
 #orprinciples {
-	margin-top: 0;
+	margin-top: 50px;
 	margin-bottom: 27px;
 }
 
@@ -718,6 +721,9 @@ navbar {
 	margin-bottom: 15px;
 }
 
+.gps {
+	padding-bottom: 25px;
+}
 
 .secondary {
 	/*position: fixed;*/
