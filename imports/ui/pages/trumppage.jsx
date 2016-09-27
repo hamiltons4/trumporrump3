@@ -8,7 +8,9 @@ import Ubar from '../components/ubar.jsx'
 import Wline from '../components/wline.jsx'
 import Wbar from '../components/wbar.jsx'
 
-let url = "https://github.com";
+let url = "www.trumporrump.com";
+let appId = "144989435958633";
+let message = "Trump or Rump?";
 
 export const Trumppage = (props) => 
 <div className="container-fluid" id="theT">
@@ -135,11 +137,12 @@ export const Trumppage = (props) =>
   </div>
   <div className="foot">
 			<div className="buttonholder">
-				<FacebookButton url={url} className="btn btn-facebook">
-					<i className="fa fa-facebook"></i>
-					{" "}
-					<FacebookCount url={url} />
-				</FacebookButton>
+        <FacebookButton url={url} message={message} appId={appId} className="btn btn-facebook">
+          <i className="fa fa-facebook-square"></i>
+          {" Share "}
+          <FacebookCount url={url} />
+          {/*{" "}*/}
+        </FacebookButton>
 				<TwitterButton url={url} className="btn btn-twitter">
 					<i className="fa fa-twitter"></i>
 				</TwitterButton>
@@ -149,12 +152,13 @@ export const Trumppage = (props) =>
 				<GooglePlusButton url={url} className="btn btn-google-plus">
 					<i className="fa fa-google-plus"></i>
 				</GooglePlusButton>
+        <TumblrButton title="Share via Tumblr" message={message} url={url} className="btn btn-tumblr">
+          <i className="fa fa-tumblr"></i>
+        </TumblrButton>
+
 			</div>
-			{/*
-			<TumblrButton className="btn btn-tumblr">
-				{"Tumblr"}
-			</TumblrButton>
-			*/}
+			
+      <p className="copyright">&#169; 2016 Hamilton Smith</p>
 	</div>  
 </div>
 

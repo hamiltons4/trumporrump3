@@ -28,7 +28,10 @@ import Mainanim from '../components/mainanim.jsx'
 //Data
 //import { LineData } from '../../../both/collections/tweets.js'
 
-let url = "https://github.com";
+//let url = "http://github.com";
+let url = "www.trumporrump.com";
+let appId = "144989435958633";
+let message = "Trump or Rump?";
 
 var today = moment().format('MMMM Do YYYY');
 
@@ -95,10 +98,11 @@ export const Homepage = (props) =>
 			{/*<Social />*/}
 			<Imod />
 			<div className="buttonholder">
-				<FacebookButton url={url} className="btn btn-facebook">
-					<i className="fa fa-facebook"></i>
-					{" "}
+				<FacebookButton url={url} message={message} appId={appId} className="btn btn-facebook">
+					<i className="fa fa-facebook-square"></i>
+					{" Share "}
 					<FacebookCount url={url} />
+					{/*{" "}*/}
 				</FacebookButton>
 				<TwitterButton url={url} className="btn btn-twitter">
 					<i className="fa fa-twitter"></i>
@@ -109,12 +113,12 @@ export const Homepage = (props) =>
 				<GooglePlusButton url={url} className="btn btn-google-plus">
 					<i className="fa fa-google-plus"></i>
 				</GooglePlusButton>
+				<TumblrButton title="Share via Tumblr" message={message} url={url} className="btn btn-tumblr">
+					<i className="fa fa-tumblr"></i>
+				</TumblrButton>
 			</div>
-			{/*
-			<TumblrButton className="btn btn-tumblr">
-				{"Tumblr"}
-			</TumblrButton>
-			*/}
+			
+			<p className="copyright">&#169; 2016 Hamilton Smith</p>
 	</div>
 </div>
 

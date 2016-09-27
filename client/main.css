@@ -487,6 +487,19 @@ navbar {
 	
 }
 
+.copyright {
+	display: inline-block;
+	float: left;
+	margin-top: 30px;
+	margin-left: 10px;
+}
+
+.modali {
+	display: inline;
+	position: absolute;
+	padding-top: 15px;
+}
+
 /* Social ******************************************************** */
 .buttonholder {
 	float: right;
@@ -523,6 +536,7 @@ navbar {
 	border-radius: 4px;
 	color: #FFF;
 	background: #D34836;
+	margin-right: 2px;
 }
 
 .btn.btn-google-plus:hover,
@@ -535,6 +549,12 @@ navbar {
 	color: #FFF;
 	background: #FF4500;
 	margin-right: 2px;
+}
+
+.btn.btn-tumblr {
+	border-radius: 4px;
+	color: #fff;
+	background: #35465c;
 }
 
 /* ================= Modal ========================== */

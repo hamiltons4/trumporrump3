@@ -8,13 +8,15 @@ import Ubar from '../components/ubar.jsx'
 import Wline from '../components/wline.jsx'
 import Wbar from '../components/wbar.jsx'
 
-let url = "https://github.com";
+let url = "www.trumporrump.com";
+let appId = "144989435958633";
+let message = "Trump or Rump?";
 
 export const Rumppage = (props) => 
 <div className="container-fluid" id="theR">
 <div className="container-fluid secondary">
     <h1>Rump.</h1>
-    <img className="pagegif img-responsive" id="rumpgif" src={"../../images/RumpTalk5.gif"} alt="rump is a butthead who says unthinking uncaring and dangerous things"/>
+    <img className="pagegif img-responsive" id="rumpgif" src={"../../images/RumpTalk6.gif"} alt="rump is a butthead who says unthinking uncaring and dangerous things"/>
     <ul id="rumplist">
     <li>Would change the symbolic meaning of the United States from Courage, Love, and Openness to 
     	smallness and fear. From Lady Liberty to a wall.
@@ -26,8 +28,8 @@ export const Rumppage = (props) =>
   	<li>Uses National stage as arena for dealing with own self esteem issues such as little or big 'hands'.
   	
   	</li>
-  	<li>Appears to believe that the attention getting tactics of reality television are appropriate for dealing
-  	with international negotiations in which lives and nuclear weapons may be involved.</li>
+  	<li>Appears to believe that the attention getting tactics of reality television (and professional wrestling)
+  	are appropriate for dealing with international negotiations in which lives and nuclear weapons may be involved.</li>
   	<li>Rash. Perhaps foolish.</li>
     </ul>
 {/*    <p>Again she looked her incredulity.</p>
@@ -96,10 +98,11 @@ occasionally rose from the deep to do battle with them, were azdyryths, or sea-d
   </div>
   <div className="foot">
 			<div className="buttonholder">
-				<FacebookButton url={url} className="btn btn-facebook">
-					<i className="fa fa-facebook"></i>
-					{" "}
+				<FacebookButton url={url} message={message} appId={appId} className="btn btn-facebook">
+					<i className="fa fa-facebook-square"></i>
+					{" Share "}
 					<FacebookCount url={url} />
+					{/*{" "}*/}
 				</FacebookButton>
 				<TwitterButton url={url} className="btn btn-twitter">
 					<i className="fa fa-twitter"></i>
@@ -110,11 +113,11 @@ occasionally rose from the deep to do battle with them, were azdyryths, or sea-d
 				<GooglePlusButton url={url} className="btn btn-google-plus">
 					<i className="fa fa-google-plus"></i>
 				</GooglePlusButton>
+				<TumblrButton title="Share via Tumblr" message={message} url={url} className="btn btn-tumblr">
+					<i className="fa fa-tumblr"></i>
+				</TumblrButton>
 			</div>
-			{/*
-			<TumblrButton className="btn btn-tumblr">
-				{"Tumblr"}
-			</TumblrButton>
-			*/}
+			
+			<p className="copyright">&#169; 2016 Hamilton Smith</p>
   </div>    
 </div>

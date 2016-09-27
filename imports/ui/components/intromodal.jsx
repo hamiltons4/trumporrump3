@@ -45,8 +45,9 @@ Imod = React.createClass({
 
 	render() {
 		return (
-			<div>
+			<div className="modali">
 				<Button
+					id="introbutton"
 		 			bsStyle="primary"
 		 			bsSize="large"
 		 			//onClick={this.open.bind(this)}

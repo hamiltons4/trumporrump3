@@ -7,7 +7,9 @@ import Principles from '../components/principles.jsx'
 import Gps from '../components/gps.jsx'
 import Details from '../components/details.jsx'
 
-let url = "https://github.com";
+let url = "www.trumporrump.com";
+let appId = "144989435958633";
+let message = "Trump or Rump?";
 
 export const Aboutpage = (props) => 
 <div className="container-fluid" id="theA">
@@ -34,10 +36,11 @@ export const Aboutpage = (props) =>
 </div>
 <div className="foot" id="aboutfoot">
 			<div className="buttonholder">
-				<FacebookButton url={url} className="btn btn-facebook">
-					<i className="fa fa-facebook"></i>
-					{" "}
+				<FacebookButton url={url} message={message} appId={appId} className="btn btn-facebook">
+					<i className="fa fa-facebook-square"></i>
+					{" Share "}
 					<FacebookCount url={url} />
+					{/*{" "}*/}
 				</FacebookButton>
 				<TwitterButton url={url} className="btn btn-twitter">
 					<i className="fa fa-twitter"></i>
@@ -48,12 +51,13 @@ export const Aboutpage = (props) =>
 				<GooglePlusButton url={url} className="btn btn-google-plus">
 					<i className="fa fa-google-plus"></i>
 				</GooglePlusButton>
+				<TumblrButton title="Share via Tumblr" message={message} url={url} className="btn btn-tumblr">
+					<i className="fa fa-tumblr"></i>
+				</TumblrButton>
 			</div>
-			{/*
-			<TumblrButton className="btn btn-tumblr">
-				{"Tumblr"}
-			</TumblrButton>
-			*/}
+			
+			
+			<p className="copyright">&#169; 2016 Hamilton Smith</p>
 </div>    
 
 </div>
