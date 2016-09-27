@@ -1,5 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import { Button } from 'react-bootstrap';
+import { EmailButton } from 'react-social';
+
+let message = "Trump or Rump?";
+let url = "www.trumporrump.com";
 
 export default class Details extends Component {
 
@@ -16,9 +20,11 @@ export default class Details extends Component {
 			    God Bless America.
 			    We're going to be alright.
 			 </h4>
-			 <h4>If you need some coding done</h4>
-			   
-				<div id="aboutcontact"><button className="btn btn-primary" id="contact" type="submit"><a href="#">Contact Me</a></button></div>				
+			 <h4>If you need some coding done, contact me</h4>
+			   <EmailButton title="Share via E-Mail" message={message} url={url} id="contact1"className="btn btn-primary">
+                    <i className="fa fa-at"/> trumporrump@gmail.com
+				</EmailButton>
+				{/*<div id="aboutcontact"><button className="btn btn-primary" id="contact" type="submit"><a href="#">Contact Me</a></button></div>*/}				
 			</div>
 		)
 	}

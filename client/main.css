@@ -741,6 +741,13 @@ navbar {
 	margin-bottom: 15px;
 }
 
+.tdiv {
+	display: inline-block;
+}
+
+#contact1 {
+	margin-bottom: 15px;
+}
 .gps {
 	padding-bottom: 25px;
 }
