@@ -778,6 +778,10 @@ navbar {
 	padding-bottom: 25px;
 }
 
+#disclaimer {
+	margin-top: 25px;
+}
+
 .secondary {
 	/*position: fixed;*/
 	/*z-index: 999;*/

@@ -21,6 +21,7 @@ export default class Gps extends Component {
 					</div>
 					
 				</div>
+				<p id="disclaimer">The presence of these books does not imply endorsement of this site by the authors.</p>
 			</div>	
 		)
 	}

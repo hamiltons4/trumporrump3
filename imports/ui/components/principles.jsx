@@ -25,6 +25,7 @@ export default class Principles extends Component {
 				<img src="//ir-na.amazon-adsystem.com/e/ir?t=trumporrump-20&l=am2&o=1&a=0981376304" width="1" height="1" border="0" alt="" 
 				style={{border:'none !important', margin:'0px !important'}} />
 				</div>
+				<p id="disclaimer">The presence of these books does not imply endorsement of this site by the authors.</p>
 			</div>
 		)
 	}

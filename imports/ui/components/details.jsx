@@ -20,7 +20,7 @@ export default class Details extends Component {
 			    God Bless America.
 			    We're going to be alright.
 			 	</h4>
-			 	<h4>If yo'd like to see this site stay open until the election, and also have new stuff, please</h4>
+			 	<h4>If you'd like to see this site stay open until the election, and also have new stuff, please</h4>
 
 
 			 	<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
