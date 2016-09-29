@@ -478,7 +478,7 @@ navbar {
 }
 
 
-/*==================================================================== */
+/*================================== footer ================================== */
 .foot {
 	background: #071E3E;
 	width: 100%;
@@ -495,15 +495,34 @@ navbar {
 }
 
 .modali {
-	display: inline;
-	position: absolute;
+	/*display: inline;*/
+	/*position: absolute;*/
 	padding-top: 15px;
+	display: inline-block;
+	margin-left: 10px;
+	margin-top: 7px;
+}
+
+.sndsound {
+	display: inline-block;
+	float: left;
+	margin-right: 10px;
+	margin-top: 22px;
+	margin-left: 10;
+}
+
+#introbutton {
+	font-size: 14px;
+	padding-left: 12px;
+	padding-right: 12px;
+	padding-bottom: 6px;
+	padding-top: 6px;
 }
 
 /* Social ******************************************************** */
 .buttonholder {
 	float: right;
-	margin-top: 25px;
+	margin-top: 20px;
 	margin-right: 10px;
 }
 

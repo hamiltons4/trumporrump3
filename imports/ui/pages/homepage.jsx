@@ -24,6 +24,7 @@ import Wline from '../components/wline.jsx'
 import Wbar from '../components/wbar.jsx'
 import Imod from '../components/intromodal.jsx'
 import Mainanim from '../components/mainanim.jsx'
+import SndButton from '../components/sndbutton.jsx'
 
 //Data
 //import { LineData } from '../../../both/collections/tweets.js'
@@ -96,6 +97,8 @@ export const Homepage = (props) =>
 	</div>
 	<div className="foot">
 			{/*<Social />*/}
+			<p className="copyright">&#169; 2016 Hamilton Smith</p>
+			<SndButton />
 			<Imod />
 			<div className="buttonholder">
 				<FacebookButton url={url} message={message} appId={appId} className="btn btn-facebook">
@@ -118,7 +121,6 @@ export const Homepage = (props) =>
 				</TumblrButton>
 			</div>
 			
-			<p className="copyright">&#169; 2016 Hamilton Smith</p>
 	</div>
 </div>
 

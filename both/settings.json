@@ -11,5 +11,11 @@
 	},
 	"public": {
 
-	}
+	},
+	"galaxy.meteor.com": {
+    	"env": {
+      		"MONGO_URL": "mongodb://hamilton4:verily_I_say@aws-us-east-1-portal.9.dblayer.com:15492/trumporrump1"
+      		
+    	}
+  	}
 }
