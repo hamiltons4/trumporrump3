@@ -128,7 +128,7 @@ if (Meteor.isServer) {
 			}*/
 		//});
 
-		console.log(moment().dayOfYear());
+		//console.log(moment().dayOfYear());
 		
 		var Twit = require('twit');
 
@@ -178,8 +178,8 @@ if (Meteor.isServer) {
 			i = g.length;
 			var tweetDate = [];
 			var userTweet = [];
-			console.log(g[1].created_at);
-			console.log(g[1].text); 
+			//console.log(g[1].created_at);
+			//console.log(g[1].text); 
 
 			while(i--) {
 				/*console.log(g[i].created_at);

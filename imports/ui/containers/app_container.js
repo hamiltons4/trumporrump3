@@ -76,7 +76,7 @@ export default createContainer(() => {
 		
 
 	if (trumps+wtrumps > rumps+wrumps) {
-		console.log("Trump wins!");
+		//console.log("Trump wins!");
 		//trumpWin = 1;
 		//rumpWin = 0;
 		votewinner = 0;
@@ -84,7 +84,7 @@ export default createContainer(() => {
 
 		//console.log(trumpWin, rumpWin);
 	}else{
-		console.log("Rump wins!");
+		//console.log("Rump wins!");
 		//trumpWin = 0;
 		//rumpWin = 1;
 		votewinner = 1;
@@ -111,12 +111,12 @@ export default createContainer(() => {
 	*/	
 	
 		 if ( Session.equals("modalopen", "false")) {
-            	console.log("Tracker1");
+            	//console.log("Tracker1");
          		animclass = "mainimg shake-little shake-constant";	//return;
          		//console.log(animclass);
          		//Session.set("sesanimclass", animclass);
             }else {
-  				console.log("Tracker2");
+  				//console.log("Tracker2");
   				animclass = "mainimg";
   				//console.log(animclass);
   				//Session.set("sesanimclass", animclass);

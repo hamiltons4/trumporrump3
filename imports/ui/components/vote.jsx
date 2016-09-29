@@ -13,10 +13,10 @@ export default class Vote extends Component {
 			//e.preventDefault();
 			//userloc = UserLocation.get();
 			Meteor.call('UserLocation/get', function(err, res) {
-				if(res) {console.log(res);
+				if(res) {//console.log(res);
 				councode = res.country_code;
 				//councode = "SP";
-				console.log(councode);
+				//console.log(councode);
 				}	
 			});
 			//councode = userloc.country_code;
@@ -27,7 +27,7 @@ export default class Vote extends Component {
 			var scaleMult = 5; // scale multiplier for display
 			var vote = 1 * scaleMult; 
 			//var parseDate = d3.time.format("%a %b %d %Y").parse;
-			console.log('Trump Vote!');
+			//console.log('Trump Vote!');
 			// If trump button is pressed increment trumps for that day
 			// If rump button is pressed increment rumps for that day	
 			/*Meteor.call("increTrumps", vote, moment().isoWeekday(), function(e, r) {
@@ -44,7 +44,7 @@ export default class Vote extends Component {
 				/* So what I want to do in here is call UincreTrumps if it is a us press and 
 				WIncreTrumps if it is a world press. This necessitates switch from LineData to
 				ULineData and WLineData as well as new publications and subscriptions.. */
-				console.log("Trump pressed");
+				//console.log("Trump pressed");
 				Meteor.call("increTrumps", vote, moment().dayOfYear(), function(e, r) {
 					if (e) alert(e.reason)
 					Session.set("oldT", r);	//this is a pattern to use session variables initiated on the server
@@ -67,7 +67,7 @@ export default class Vote extends Component {
 				if(res) {console.log(res);
 				councodeR = res.country_code;
 				//councodeR = "SP";
-				console.log(councodeR);
+				//console.log(councodeR);
 
 				}	
 			});
@@ -79,7 +79,7 @@ export default class Vote extends Component {
 				if (e) alert(e.reason)
 			});*/
 			if (councodeR == "US") {
-			console.log("Rump pressed");	
+			//console.log("Rump pressed");	
 			Meteor.call("increRumps", vote, moment().dayOfYear(), function(e,r) {
 				if (e) alert(e.reason)
 				Session.set("oldR", r); //this is a pattern to use session variables initiated on the server	

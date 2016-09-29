@@ -26,7 +26,7 @@ componentDidMount() {
 				.attr("width", this.props.width)
 				.attr("height", this.props.height);
 	//var data = this.props.data;
-	console.log(this.props.linedat);
+	//console.log(this.props.linedat);
 	var data = this.props.linedat;
 	var end = moment().utc().startOf('day');
 	var start = moment.utc(end).subtract(12, 'days');

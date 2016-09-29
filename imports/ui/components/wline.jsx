@@ -58,7 +58,7 @@ componentDidMount: function() {
 	//console.log(start);
     //console.log(data);
    
-	console.log("wline updateChart");
+	//console.log("wline updateChart");
 	//var max = 10;
 	//var max2 = 11;
 	var max = _.max(_.pluck(data, "rumps"));
@@ -73,7 +73,7 @@ componentDidMount: function() {
 	// as the true max.
 
 	var trueMax = (max >= max2)? max: max2;
-	console.log(trueMax);
+	//console.log(trueMax);
 	var yScale = d3.scale.linear()
 		.domain([0, trueMax])
 		.range([(this.props.height-15), 0]);
@@ -283,7 +283,7 @@ updateChart: function(props) {
 	// as the true max.
 
 	var trueMax = (max > max2)? max: max2;
-	console.log(trueMax);
+	//console.log(trueMax);
 	var yScale = d3.scale.linear()
 		.domain([0, trueMax])
 		.range([(this.props.height-15), 0]);

@@ -59,8 +59,8 @@ Ubar = React.createClass({
     	}else{
     		Session.set("ubsize", 250);
     	}
-    	console.log("parentWidth"+parentWidth);
-    	console.log("this"+this.props.width);
+    	//console.log("parentWidth"+parentWidth);
+    	//console.log("this"+this.props.width);
     	/*
     	if(parentWidth<this.props.width){
     		//this.setState({width:parentWidth-20});

@@ -39,7 +39,7 @@ Imod = React.createClass({
 
 	open() {
 		Session.set("modalopen", "true"); //I may remove this line as I don't want animation change from the show intro button
-		console.log("open");
+		//console.log("open");
 		this.setState({ showModal: true });
 	},
 
