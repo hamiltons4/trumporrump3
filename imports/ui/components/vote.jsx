@@ -14,8 +14,8 @@ export default class Vote extends Component {
 			//userloc = UserLocation.get();
 			Meteor.call('UserLocation/get', function(err, res) {
 				if(res) {console.log(res);
-				//councode = res.country_code;
-				councode = "SP";
+				councode = res.country_code;
+				//councode = "SP";
 				console.log(councode);
 				}	
 			});
@@ -65,8 +65,8 @@ export default class Vote extends Component {
 			//e.preventDefault();
 			Meteor.call('UserLocation/get', function(err, res) {
 				if(res) {console.log(res);
-				//councodeR = res.country_code;
-				councodeR = "SP";
+				councodeR = res.country_code;
+				//councodeR = "SP";
 				console.log(councodeR);
 
 				}	

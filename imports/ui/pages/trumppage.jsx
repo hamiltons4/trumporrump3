@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { FacebookButton, FacebookCount } from "react-social"
-import { TwitterButton, RedditButton, GooglePlusButton, TumblrButton } from 'react-social'
+import { TwitterButton, RedditButton, GooglePlusButton, TumblrButton, VKontakteButton } from 'react-social'
 
 import Vote from '../components/vote.jsx'
 import Uline from '../components/uline.jsx'
@@ -152,6 +152,9 @@ export const Trumppage = (props) =>
 				<GooglePlusButton url={url} className="btn btn-google-plus">
 					<i className="fa fa-google-plus"></i>
 				</GooglePlusButton>
+        <VKontakteButton title="Share via VKontakte" message={message} url={url} element="a" className="btn btn-vkontakte">
+          <i className="fa fa-vk"/>
+        </VKontakteButton>
         <TumblrButton title="Share via Tumblr" message={message} url={url} className="btn btn-tumblr">
           <i className="fa fa-tumblr"></i>
         </TumblrButton>

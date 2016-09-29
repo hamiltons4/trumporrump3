@@ -7,7 +7,7 @@ Sndbutton = React.createClass({
 	//var s = new buzz.sound('');
 
 	playSound(e) {
-		var s = new buzz.sound('../../sounds/TorR2.wav');
+		var s = new buzz.sound('../../sounds/TorR3.wav');
 		console.log("sound");
 		s.play();
 	},

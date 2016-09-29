@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { FacebookButton, FacebookCount } from 'react-social'
-import { TwitterButton, RedditButton, GooglePlusButton, TumblrButton, EmailButton } from 'react-social'
+import { TwitterButton, RedditButton, GooglePlusButton, TumblrButton, EmailButton, VKontakteButton } from 'react-social'
 
 import Tshirts from '../components/tshirts.jsx'
 import Principles from '../components/principles.jsx'
@@ -51,6 +51,9 @@ export const Aboutpage = (props) =>
 				<GooglePlusButton url={url} className="btn btn-google-plus">
 					<i className="fa fa-google-plus"></i>
 				</GooglePlusButton>
+				<VKontakteButton title="Share via VKontakte" message={message} url={url} element="a" className="btn btn-vkontakte">
+                    <i className="fa fa-vk"/>
+				</VKontakteButton>
 				<TumblrButton title="Share via Tumblr" message={message} url={url} className="btn btn-tumblr">
 					<i className="fa fa-tumblr"></i>
 				</TumblrButton>

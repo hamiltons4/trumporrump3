@@ -576,6 +576,13 @@ navbar {
 	background: #35465c;
 }
 
+.btn.btn-vkontakte {
+	border-radius: 4px;
+	color: #fff;
+	background: #45668e;
+	margin-right: 2px;
+}
+
 /* ================= Modal ========================== */
 .md-content {
 	box-shadow: 0 0 0 10px #C42939, 0 0 0 15px #ecebe6, 0 0 0 20px #C42939;
